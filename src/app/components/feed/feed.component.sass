@@ -2,84 +2,67 @@
 @import "../../../styles/base/_mixins"
 
 .feed
-  padding: 10px 0
   clear: both
+  padding: 10px 0
   +tablet
-    width: calc(70% - 10px)
-    margin-left: 10px
     float: left
+    width: 70%
   +desktop
-    display: flex
     align-items: stretch
+    display: flex
     flex-wrap: wrap
-  &:hover
-    pointer-events: none
-    *
-      pointer-events: all
-    .feed__post
-      opacity: .5
-      filter: grayscale(100%) blur(1px)
-      &:hover
-        opacity: 1
-        filter: grayscale(0) blur(0)
 
 .feed__post
   background: #fff
+  border-radius: 6px
   box-shadow: inset 0 -4px 10px rgba(#000, .15)
-  padding: 20px
-  margin-bottom: 10px
-  transition: .3s all
   box-sizing: border-box
+  margin-bottom: 10px
+  padding: 20px
+  transition: .3s all
   will-change: all
   &:hover
-    transform: scale(1.01)
+    padding-bottom: 50px
     .feed__photo
       animation: force 3s infinite alternate
       transition: .3s all
     .feed__content
       h1
-        color: $primary
         border-bottom-color: $primary
+        color: $primary
       p
         color: $secondary
   &:after
-    content: ''
     clear: both
+    content: ''
     display: table
-  +tablet
-    box-shadow: inset 0 -2px 3px 0 rgba(#000, .3)
-    border-radius: 6px
-    &:hover
-      transform: scale(1.02) translateX(20px)
   +desktop
-    width: calc(50% - 5px)
     float: left
     margin-right: 10px
-    &:hover
-      transform: scale(1.02)
+    width: calc(50% - 5px)
     &:nth-of-type(2n)
       margin-right: 0
 
 .feed__photo
   border-radius: 6px
-  transition: .3s all
   float: left
   margin-right: 20px
+  transition: .3s all
   +tablet
     width: 100px
     height: 100px
 
 .feed__content
-  margin: 0
   display: flex
   flex-direction: row
   flex-wrap: wrap
+  margin: 0
   transition: .3s all
   will-change: font-size
   h1, p
-    width: 100%
     transition: .3s all
+    width: 100%
   h1
+    border-bottom: 2px dotted #ccc
     margin: 0
     padding-bottom: 10px
-    border-bottom: 2px dotted #ccc

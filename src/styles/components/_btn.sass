@@ -8,6 +8,7 @@
   outline: none
   text-decoration: none
   user-select: none
+  border-radius: 4px
   .icon
     margin-right: 8px
     transition: .3s all
@@ -18,24 +19,21 @@
     display: inline-block
 
 .btn__default
-  border-radius: 50px
-  &:hover,  
+  border-radius: 6px
+  &:hover,
   &.active
     background: $primary
     box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary - 30
     color: #fff
-    transform: scale(1.05)
     .icon
       fill: #fff
       filter: drop-shadow(0 0 5px #000)
-      animation: force-rotate 1s infinite alternate
   &:active
     background: $secondary
     transform: scale(.9)
 
 .btn__primary
   background: $primary + 50
-  border-radius: 4px
   color: $secondary
   box-shadow: 0 3px $primary - 30
   &:hover
@@ -49,13 +47,51 @@
     box-shadow: 0 3px 10px $primary - 30
     color: #fff
     transform: scale(.9)
+
+.btn__third
+  &:hover
+    background: $third
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $third - 30
+    color: #fff
+    .icon
+      fill: #fff
+      filter: drop-shadow(0 0 5px #000)
+  &:active
+    background: $third
+    transform: scale(.9)
+
+.btn__four
+  &:hover
+    background: $four
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $four - 30
+    color: #fff
+    .icon
+      fill: #fff
+      filter: drop-shadow(0 0 5px #000)
+  &:active
+    background: $four
+    transform: scale(.9)
+
+.btn__five
+  &:hover
+    background: $five
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $five - 30
+    color: #fff
+    .icon
+      fill: #fff
+      filter: drop-shadow(0 0 5px #000)
+  &:active
+    background: $five
+    transform: scale(.9)
+
 .btn__bullet
   background: transparent
   padding: 5px
   &:hover
+    transform: scale(1.1)
     .icon
       fill: #fff
-      filter: drop-shadow(0 0 5px #000)
+      filter: drop-shadow(0 0 5px rgba(#000, .5))
   .icon
     fill: $secondary
     filter: drop-shadow(0 0 5px #fff)

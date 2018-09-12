@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './view/home/home.component'
+import { MensagensComponent } from './view/mensagens/mensagens.component'
 import { NotfoundComponent } from './view/notfound/notfound.component'
 
 const routes: Routes = [
@@ -9,6 +10,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'mensagens',
+    component: MensagensComponent
   },
   {
     path: '**',

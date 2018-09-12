@@ -1,0 +1,8 @@
+<h1>Mensagens</h1>
+<ul>
+  <li *ngFor="let msg of chats">
+    <img [src]="msg.photo" [alt]="msg.name" width="50" height="50">
+    <h1>{{ msg.name }}</h1>
+    <p>{{ msg.content }}</p>
+  </li>
+</ul>

@@ -1,15 +1,15 @@
+@import "../../../styles/base/_variables"
 @import "../../../styles/base/_mixins"
 
 .post
   background: #fff
-  padding: 10px 10px 0
+  border-radius: 6px
   box-sizing: border-box
+  padding: 10px 10px 0
   position: relative
   +tablet
-    border-radius: 6px
-    width: calc(70% - 10px)
-    margin-left: 10px
     float: left
+    width: 70%
 
 .post__row
   display: flex
@@ -17,39 +17,43 @@
 .post__photo
   border-radius: 4px
   float: left
-  min-width: 50px
-  max-width: 200px
   max-height: 200px
+  max-width: 200px
+  min-width: 50px
 
 .post__input
-  font-size: 1.5em
-  background: linear-gradient(35deg, rgba(#000, .2) 10%, #fff)
-  border-radius: 4px
+  background: linear-gradient(90deg, rgba(#000, .2) 10%, #fff)
+  box-shadow: inset 4px 0 $primary + 100
   border: 0
-  width: calc(80% - 10px)
+  box-sizing: border-box
+  color: $primary
+  float: right
+  font-size: 1.5em
+  margin-left: 10px
+  max-width: calc(80% - 10px)
   min-height: 80%
   min-width: calc(80% - 10px)
-  max-width: calc(80% - 10px)
-  margin-left: 10px
-  padding: 10px
-  float: right
-  box-sizing: border-box
   outline: none
+  padding: 10px
+  width: calc(80% - 10px)
+  &:focus
+    box-shadow: inset 4px 0 green
+    background: linear-gradient(90deg, rgba(green, .2) 10%, #fff)
 
 .post__options
-  width: 100%
+  clear: both
   list-style: none
   margin: 0
   padding: 10px 0 0
-  clear: both
+  width: 100%
   &:after
-    content: ''
     clear: both
+    content: ''
     display: table
   li
-    margin-right: 10px
-    margin-bottom: 10px
     float: left
+    margin-bottom: 10px
+    margin-right: 10px
     &:last-of-type
       margin-right: 0
   +desktop

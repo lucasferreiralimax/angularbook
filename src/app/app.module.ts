@@ -10,6 +10,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { PostComponent } from './components/post/post.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { MensagensComponent } from './view/mensagens/mensagens.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FooterComponent } from './components/footer/footer.component';
     NavComponent,
     PostComponent,
     FeedComponent,
-    FooterComponent
+    FooterComponent,
+    AsideComponent,
+    MensagensComponent
   ],
   imports: [
     BrowserModule,
