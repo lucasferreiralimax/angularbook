@@ -1,0 +1,58 @@
+@import "../../../styles/base/_variables"
+
+.mensagens
+  .btn
+    width: 100%
+    margin-bottom: 10px
+
+.mensagens__list
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    background: #fff
+    padding: 20px
+    margin-bottom: 1px
+    transition: .3s all
+    position: relative
+    &:first-of-type
+      border-radius: 6px 6px 0 0
+    &:last-of-type
+      border-radius: 0 0 6px 6px
+    &:hover
+      animation: force 3s infinite alternate
+      padding: 30px 20px
+      z-index: 3
+      + li
+        z-index: 1
+      img
+        transform: scale(1.1)
+        animation: force 3s infinite alternate
+      h1
+        color: $primary
+    img
+      border-radius: 4px
+      float: left
+      margin: 0 20px 10px 0
+      transition: .3s all
+    h1
+      margin: 0
+      transition: .3s all
+
+.mensagens__input
+  background: linear-gradient(-90deg, rgba(#000, .2) 10%, #fff)
+  border-radius: 0 6px 6px 0
+  border: 0
+  box-shadow: inset 4px 0 $primary + 100
+  box-sizing: border-box
+  color: $primary
+  font-size: 1.2em
+  margin: 20px 0
+  max-width: 100%
+  min-width: 100%
+  outline: none
+  padding: 20px
+  width: 100%
+  &:focus
+    box-shadow: inset 4px 0 green
+    background: linear-gradient(90deg, rgba(green, .2) 10%, #fff)
