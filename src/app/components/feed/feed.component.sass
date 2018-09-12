@@ -1,7 +1,13 @@
 @import "../../../styles/base/_animations"
+@import "../../../styles/base/_mixins"
 
 .feed
   padding: 10px 0
+  clear: both
+  +tablet
+    width: calc(70% - 10px)
+    margin-left: 10px
+    float: left
   &:hover
     .feed__post
       opacity: .8
@@ -19,6 +25,23 @@
     transform: scale(1.01)
     .feed__photo
       animation: force 3s infinite alternate
+      transition: .3s all
+  &:after
+    content: ''
+    clear: both
+    display: table
+  +tablet
+    box-shadow: inset 0 -2px 3px 0 rgba(#000, .3)
+    border-radius: 6px
+    margin: 10px 0
+    &:hover
+      border-radius: 10px
+  +desktop
+    &:hover
+      transform: scale(1.02) translateX(20px)
 
 .feed__photo
   border-radius: 100%
+  transition: .3s all
+  float: left
+  margin-right: 20px
