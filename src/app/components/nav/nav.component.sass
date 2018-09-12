@@ -1,6 +1,16 @@
+@import "../../../styles/base/_mixins"
+
 .nav
-  display: flex
+  display: inline-flex
   .btn
     margin-right: 10px
     &:last-of-type
-      margin-left: 0
+      margin-right: 0
+  +tablet
+    float: right
+  button
+    margin-right: 0
+    position: absolute
+    right: 10px
+    +tablet
+      display: none

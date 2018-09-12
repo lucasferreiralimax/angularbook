@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-feed',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feed.component.sass']
 })
 export class FeedComponent implements OnInit {
+
+  @HostListener('window:resize', ['$event'])
+  sizeChange(event) {
+    console.log(event);
+  }
 
   feed = [
     {
@@ -38,6 +43,9 @@ export class FeedComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(document.querySelector('.feed'))
+    let test = () => console.log("teste",)
+    window.addEventListener("resize", test);
   }
 
 }

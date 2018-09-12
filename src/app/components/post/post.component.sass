@@ -18,6 +18,8 @@
   border-radius: 4px
   float: left
   min-width: 50px
+  max-width: 200px
+  max-height: 200px
 
 .post__input
   font-size: 1.5em
@@ -50,3 +52,10 @@
     float: left
     &:last-of-type
       margin-right: 0
+  +desktop
+    display: flex
+    justify-content: space-around
+    li
+      width: 100%
+      .btn
+        width: 100%

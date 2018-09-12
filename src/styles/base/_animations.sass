@@ -4,8 +4,17 @@
   0%
     box-shadow: 0 0 0 2px #fff, 0 0 4px 4px rgba($primary, .6)
   50%
+    border-radius: 100%
     box-shadow: 0 0 15px 10px rgba($primary, .9)
     transform: scale(1.2) rotate(-30deg)
     filter: brightness(2)
   100%
     box-shadow: 0 0 0 2px #fff, 0 0 4px 4px rgba($primary, .6)
+
+@keyframes force-rotate
+  0%
+    transform: rotate(0)
+  50%
+    transform: rotate(10deg) scale(1.1)
+  100%
+    transform: rotate(-10deg)

@@ -8,9 +8,16 @@
     width: calc(70% - 10px)
     margin-left: 10px
     float: left
+  +desktop
+    display: flex
+    align-items: stretch
+    flex-wrap: wrap
   &:hover
+    pointer-events: none
+    *
+      pointer-events: all
     .feed__post
-      opacity: .8
+      opacity: .5
       filter: grayscale(100%) blur(1px)
       &:hover
         opacity: 1
@@ -18,8 +25,9 @@
 
 .feed__post
   background: #fff
-  box-shadow: inset 0 -4px 10px rgba(#000, .3)
+  box-shadow: inset 0 -4px 10px rgba(#000, .15)
   padding: 20px
+  margin-bottom: 10px
   transition: .3s all
   box-sizing: border-box
   will-change: all
@@ -28,6 +36,12 @@
     .feed__photo
       animation: force 3s infinite alternate
       transition: .3s all
+    .feed__content
+      h1
+        color: $primary
+        border-bottom-color: $primary
+      p
+        color: $secondary
   &:after
     content: ''
     clear: both
@@ -35,7 +49,6 @@
   +tablet
     box-shadow: inset 0 -2px 3px 0 rgba(#000, .3)
     border-radius: 6px
-    margin: 10px 0
     &:hover
       transform: scale(1.02) translateX(20px)
   +desktop
@@ -43,12 +56,12 @@
     float: left
     margin-right: 20px
     &:hover
-      transform: scale(1.02) translateY(-5px)
+      transform: scale(1.02)
     &:nth-of-type(2n)
       margin-right: 0
 
 .feed__photo
-  border-radius: 100%
+  border-radius: 6px
   transition: .3s all
   float: left
   margin-right: 20px
@@ -65,5 +78,8 @@
   will-change: font-size
   h1, p
     width: 100%
+    transition: .3s all
   h1
     margin: 0
+    padding-bottom: 10px
+    border-bottom: 2px dotted #ccc
