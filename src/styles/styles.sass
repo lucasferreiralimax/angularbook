@@ -1,4 +1,4 @@
-@import _variables
+@import base/_variables
 
 html,
 body
@@ -7,20 +7,4 @@ body
   background: #ccc
   font-family: Arial
 
-.btn
-  border: 0
-  padding: 10px
-  display: block
-  cursor: pointer
-  transition: .3s all
-  outline: none
-  text-decoration: none
-
-.btn__default
-  border-radius: 50px
-  &:hover
-    background: $primary
-    color: #fff
-  &:active
-    background: $secondary
-    transform: scale(.9)
+@import components/_btn

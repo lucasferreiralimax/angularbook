@@ -9,6 +9,7 @@ import { NotfoundComponent } from './view/notfound/notfound.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { PostComponent } from './components/post/post.component';
+import { FeedComponent } from './components/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PostComponent } from './components/post/post.component';
     NotfoundComponent,
     HeaderComponent,
     NavComponent,
-    PostComponent
+    PostComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
