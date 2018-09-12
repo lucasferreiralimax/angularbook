@@ -4,13 +4,16 @@
   display: inline-flex
   .btn
     margin-right: 10px
+    &:first-of-type
+      display: block
     &:last-of-type
       margin-right: 0
+    .text
+      font-size: 0
+    .icon
+      margin: 0
   +tablet
     float: right
-  button
-    margin-right: 0
-    position: absolute
-    right: 10px
-    +tablet
-      display: none
+    .btn
+      &:first-of-type
+        display: none

@@ -19,7 +19,8 @@
 
 .btn__default
   border-radius: 50px
-  &:hover
+  &:hover,  
+  &.active
     background: $primary
     box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary - 30
     color: #fff
@@ -27,6 +28,7 @@
     .icon
       fill: #fff
       filter: drop-shadow(0 0 5px #000)
+      animation: force-rotate 1s infinite alternate
   &:active
     background: $secondary
     transform: scale(.9)
@@ -39,8 +41,21 @@
   &:hover
     background: #fff
     color: $primary
+    .icon
+      fill: $primary
+      filter: drop-shadow(0 0 5px #000)
   &:active
     background: $primary
     box-shadow: 0 3px 10px $primary - 30
     color: #fff
     transform: scale(.9)
+.btn__bullet
+  background: transparent
+  padding: 5px
+  &:hover
+    .icon
+      fill: #fff
+      filter: drop-shadow(0 0 5px #000)
+  .icon
+    fill: $secondary
+    filter: drop-shadow(0 0 5px #fff)

@@ -1,3 +1,8 @@
 <app-post></app-post>
-<aside class="aside">aside</aside>
+<aside class="aside" [ngClass]="status ? 'active' : ''">
+  <button class="btn btn__primary" type="button"
+    (click)="status=!status"
+    [ngClass]="status ? 'active' : ''">SideBar</button>
+  aside
+</aside>
 <app-feed></app-feed>

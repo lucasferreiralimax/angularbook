@@ -1,9 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.sass']
+  styleUrls: ['./feed.component.sass'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FeedComponent implements OnInit {
 

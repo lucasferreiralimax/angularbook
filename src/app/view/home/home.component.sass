@@ -1,13 +1,35 @@
 @import "../../../styles/base/_mixins"
 
 .aside
-  width: calc(30% - 20px)
+  width: 60%
   background: #fff
-  border-radius: 6px
-  margin: 0 10px
+  box-shadow: -10px 0 30px rgba(#000, .3)
   padding: 10px
-  display: none
   box-sizing: border-box
-  float: right
+  position: fixed
+  top: 60px
+  left: auto
+  right: 0
+  bottom: 0
+  transform: translateX(100vw)
+  transition: .3s all
+  &.active
+    transform: translateX(0)
+    button
+      transform: translateX(100vw)
   +tablet
-    display: block
+    border-radius: 6px
+    box-shadow: none
+    width: calc(30% - 20px)
+    position: absolute
+    top: 70px
+    right: 10px
+    transform: translateX(0)
+  button
+    margin-right: 0
+    position: absolute
+    top: -50px
+    right: 10px
+    transform: translateX(-100vw)
+    +tablet
+      display: none
