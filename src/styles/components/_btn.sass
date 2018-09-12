@@ -11,7 +11,23 @@
   border-radius: 50px
   &:hover
     background: $primary
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary - 30
     color: #fff
+    transform: scale(1.05)
   &:active
     background: $secondary
+    transform: scale(.9)
+
+.btn__primary
+  background: $primary + 50
+  border-radius: 4px
+  color: $secondary
+  box-shadow: 0 3px $primary - 30
+  &:hover
+    background: #fff
+    color: $primary
+  &:active
+    background: $primary
+    box-shadow: 0 3px 10px $primary - 30
+    color: #fff
     transform: scale(.9)

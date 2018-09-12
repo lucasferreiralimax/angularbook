@@ -1,4 +1,5 @@
 @import "../../../styles/base/_variables"
+@import "../../../styles/base/_mixins"
 
 .header
   background: $primary
@@ -7,5 +8,8 @@
 
 .logo
   font-size: 0
+  display: none
+  +tablet
+    display: block
   svg
     fill: #fff
