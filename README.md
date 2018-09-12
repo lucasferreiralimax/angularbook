@@ -1,6 +1,7 @@
 # Angularbook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+Live demo: https://angularbook-a520a.firebaseapp.com
 
 ## Development server
 
