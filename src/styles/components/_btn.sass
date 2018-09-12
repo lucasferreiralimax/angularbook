@@ -9,6 +9,7 @@
   text-decoration: none
   user-select: none
   border-radius: 4px
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(#000, .2)
   .icon
     margin-right: 8px
     transition: .3s all
@@ -87,6 +88,7 @@
 .btn__bullet
   background: transparent
   padding: 5px
+  box-shadow: none
   &:hover
     transform: scale(1.1)
     .icon
@@ -94,4 +96,4 @@
       filter: drop-shadow(0 0 5px rgba(#000, .5))
   .icon
     fill: $secondary
-    filter: drop-shadow(0 0 5px #fff)
+    filter: drop-shadow(0 0 5px rgba(#fff, .5))
