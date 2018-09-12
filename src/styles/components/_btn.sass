@@ -6,6 +6,15 @@
   transition: .3s all
   outline: none
   text-decoration: none
+  user-select: none
+  .icon
+    margin-right: 8px
+    transition: .3s all
+    fill: #333
+  span
+    margin-right: 4px
+    transform: translateY(-5px)
+    display: inline-block
 
 .btn__default
   border-radius: 50px
@@ -14,6 +23,9 @@
     box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary - 30
     color: #fff
     transform: scale(1.05)
+    .icon
+      fill: #fff
+      filter: drop-shadow(0 0 5px #000)
   &:active
     background: $secondary
     transform: scale(.9)

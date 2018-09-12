@@ -1,7 +1,9 @@
 <section class="feed">
   <article class="feed__post" *ngFor="let post of feed">
-    <img class="feed__photo" [src]="post.photo" [alt]="post.name" width="100" height="100">
-    <h1>{{ post.name }}</h1>
-    <p>{{ post.content }}</p>
+    <img class="feed__photo" [src]="post.photo" [alt]="post.name" width="50" height="50">
+    <div class="feed__content">
+      <h1>{{ post.name }}</h1>
+      <p>{{ post.content }}</p>
+    </div>
   </article>
 </section>
