@@ -1,0 +1,41 @@
+@import "../../../styles/base/_variables"
+
+.amigos
+  .status
+    display: block
+    &:before
+      content: ''
+      background: #aaa
+      border-radius: 100%
+      width: 10px
+      height: 10px
+      margin-right: 5px
+      display: inline-block
+    &.online
+      &:before
+        background: green
+        animation: force-status 1s infinite alternate ease-in-out
+.amigos__list
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    background: #fff
+    padding: 20px
+    margin-bottom: 1px
+    transition: .3s all
+    position: relative
+    &:hover
+      padding: 40px 20px
+    &:first-of-type
+      border-radius: 6px 6px 0 0
+    &:last-of-type
+      border-radius: 0 0 6px 6px
+  img
+    border-radius: 4px
+    float: left
+    margin: 0 20px 10px 0
+    transition: .3s all
+  h1
+    margin: 0
+    transition: .3s all

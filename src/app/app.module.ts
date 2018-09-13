@@ -12,6 +12,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { MensagensComponent } from './view/mensagens/mensagens.component';
+import { AmigosComponent } from './view/amigos/amigos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MensagensComponent } from './view/mensagens/mensagens.component';
     FeedComponent,
     FooterComponent,
     AsideComponent,
-    MensagensComponent
+    MensagensComponent,
+    AmigosComponent
   ],
   imports: [
     BrowserModule,

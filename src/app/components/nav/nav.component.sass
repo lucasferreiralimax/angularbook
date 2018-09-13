@@ -2,10 +2,14 @@
 
 .nav
   display: inline-flex
+  float: right
   .btn
     margin-right: 10px
     &:first-of-type
       display: block
+      position: absolute
+      top: 10px
+      left: 10px
     &:last-of-type
       margin-right: 0
     .text
@@ -13,7 +17,6 @@
     .icon
       margin: 0
   +tablet
-    float: right
     .btn
       &:first-of-type
         display: none

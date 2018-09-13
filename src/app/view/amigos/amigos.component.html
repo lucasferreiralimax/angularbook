@@ -1,0 +1,10 @@
+<section class="amigos">
+  <h1 class="title">Amigos</h1>
+  <ul class="amigos__list">
+    <li *ngFor="let amigo of amigos">
+      <img [src]="amigo.photo" [alt]="amigo.name" width="50" height="50">
+      <h1>{{ amigo.name }}</h1>
+      <span class="status" [ngClass]="{'online': amigo.status }">{{ amigo.status ? 'Online' : 'Offline' }}</span>
+    </li>
+  </ul>
+</section>
