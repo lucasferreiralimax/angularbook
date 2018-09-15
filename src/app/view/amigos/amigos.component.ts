@@ -12,12 +12,14 @@ export class AmigosComponent implements OnInit {
     {
       "name": "Chewbacca",
       "status": true,
-      "photo": "assets/chewbacca.jpg"
+      "photo": "assets/chewbacca.jpg",
+      "quotes": "RWGWGWARAHHHHWWRGGWRWRW"
     },
     {
       "name": "Yoda",
       "status": true,
-      "photo": "assets/yoda.jpg"
+      "photo": "assets/yoda.jpg",
+      "quotes": "Que a Força esteja com você."
     },
     {
       "name": "Luke",
@@ -27,12 +29,13 @@ export class AmigosComponent implements OnInit {
     {
       "name": "Massassi",
       "status": false,
-      "photo": "assets/massassi.png",
+      "photo": "assets/massassi.png"
     },
     {
       "name": "HanSolo",
       "status": true,
-      "photo": "assets/hansolo.jpg"
+      "photo": "assets/hansolo.jpg",
+      "quotes": "Eu vou ser piloto. O melhor da galáxia."
     }
   ]
 

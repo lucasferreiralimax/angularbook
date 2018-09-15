@@ -1,10 +1,10 @@
 <section class="mensagens">
   <h1 class="title">Mensagens</h1>
   <ul class="mensagens__list">
-    <li *ngFor="let msg of chats">
+    <li class="mensagem" *ngFor="let msg of chats">
       <img [src]="msg.photo" [alt]="msg.name" width="50" height="50">
       <h1>{{ msg.name }}</h1>
-      <p>{{ msg.content }}</p>
+      <p class="mensagem__content">{{ msg.content }}</p>
     </li>
   </ul>
   <textarea #mensagem class="mensagens__input" name="mensagem" rows="2" cols="80" placeholder="Escreva sua mensagem..." (keyup)="update(mensagem.value)" [ngClass]="{'erro': erroSize }" maxlength="301"></textarea>

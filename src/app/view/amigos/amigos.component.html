@@ -5,7 +5,8 @@
       <img [src]="amigo.photo" [alt]="amigo.name" width="50" height="50">
       <h1>{{ amigo.name }}</h1>
       <span class="status" [ngClass]="{'online': amigo.status }">{{ amigo.status ? 'Online' : 'Offline' }}</span>
-      <ul class="amigo__actions">
+      <p class="amigo__quote" *ngIf="amigo.quotes">{{ amigo.quotes }}</p>
+      <!-- <ul class="amigo__actions">
         <li class="amigo__action">
           <span>Action</span>
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
@@ -14,7 +15,7 @@
         </li>
         <li class="amigo__action"></li>
         <li class="amigo__action"></li>
-      </ul>
+      </ul> -->
     </li>
   </ul>
 </section>
