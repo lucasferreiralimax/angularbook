@@ -1,7 +1,7 @@
 <section class="post">
   <div class="post__row">
     <img class="post__photo" src="assets/skywalker.jpg" alt="Lucas" width="20%" height="20%">
-    <textarea #box class="post__input" placeholder="No que está pensando?" (keyup)="update(box.value)" [ngClass]="{'erro': erroSize }"></textarea>
+    <textarea #box class="post__input" placeholder="No que está pensando?" (keyup)="update(box.value)" [ngClass]="{'erro': erroSize }" maxlength="701"></textarea>
     <p class="counter" [ngClass]="{'erro': erroSize }">{{ box.value.length }}</p>
   </div>
   <ul class="post__options">
