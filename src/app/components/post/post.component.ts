@@ -14,7 +14,7 @@ export class PostComponent implements OnInit {
 
   update(value: string) {
     this.value = value
-    if(value.length < 700 && value.length > 0) {
+    if(value.length <= 700 && value.length > 0) {
       this.erroSize = false
       this.btnSubmit = true
     } else if(value.length > 700) {
