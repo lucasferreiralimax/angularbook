@@ -35,6 +35,34 @@ export class MensagensComponent implements OnInit {
     }
   ]
 
+  value = ''
+  erroSize = false
+  btnSubmit = false
+
+  update(value: string) {
+    this.value = value
+    if(value.length <= 300 && value.length > 0) {
+      this.erroSize = false
+      this.btnSubmit = true
+    } else if(value.length > 300) {
+      this.erroSize = true
+      this.btnSubmit = false
+    } else {
+      this.erroSize = false
+      this.btnSubmit = false
+    }
+  }
+
+
+  pushMensagem(value: string) {
+    this.chats.push({
+      "name": "Yoda",
+      "photo": "assets/yoda.jpg",
+      "content": value,
+    })
+    document.querySelector('.mensagens__input').value = ''
+  }
+
   constructor() { }
 
   ngOnInit() {
