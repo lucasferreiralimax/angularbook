@@ -21,7 +21,8 @@
 
 @each $btn__name, $btn__color in (default: $primary, primary: $primary, third: $third, four: $four, five: $five )
   .btn__#{$btn__name}
-    border-radius: 6px
+    background: #fff
+    border-radius: 3px
     box-shadow: 0 0 0 1px #fff, 0 0 0 2px $btn__color - 30, 0 0 4px 2px $btn__color - 30
     color: $btn__color
     .icon
@@ -31,6 +32,7 @@
       background: $btn__color
       box-shadow: 0 0 0 1px #fff, 0 0 0 3px $btn__color - 30
       color: #fff
+      text-shadow: 0 1px 3px rgba(#000, .5)
       .icon
         fill: #fff
         filter: drop-shadow(0 0 5px #000)
