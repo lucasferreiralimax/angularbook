@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-feed',
@@ -41,12 +42,16 @@ export class FeedComponent implements OnInit {
     }
   ]
 
+  setFeed() {
+    localStorage.setItem('feed', JSON.stringify(this.feed))
+  }
+
   constructor() { }
 
   ngOnInit() {
     console.log(document.querySelector('.feed'))
     let test = () => console.log("teste",)
-    window.addEventListener("resize", test);
+    window.addEventListener("resize", test)
+    this.setFeed()
   }
-
 }
