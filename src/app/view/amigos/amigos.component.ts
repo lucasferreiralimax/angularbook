@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-amigos',
   templateUrl: './amigos.component.html',
-  styleUrls: ['./amigos.component.sass']
+  styleUrls: ['./amigos.component.sass'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AmigosComponent implements OnInit {
 

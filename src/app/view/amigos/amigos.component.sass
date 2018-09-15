@@ -19,7 +19,7 @@
   list-style: none
   margin: 0
   padding: 0
-  li
+  .amigo
     background: #fff
     padding: 20px
     margin-bottom: 1px
@@ -39,3 +39,26 @@
   h1
     margin: 0
     transition: .3s all
+
+.amigo__actions
+  background: #ccc
+  list-style: none
+  height: 100%
+  display: flex
+  float: right
+  margin: 0
+  padding: 0
+  position: absolute
+  top: 0
+  right: 0
+  align-items: center
+  .amigo__action
+    background: red
+    border-radius: 0
+    padding: 10px
+    height: 100%
+    box-sizing: border-box
+    &:last-of-type
+      border-radius: 0 6px 6px 0
+    &:empty
+      display: none
