@@ -19,71 +19,24 @@
     transform: translateY(-5px)
     display: inline-block
 
-.btn__default
-  border-radius: 6px
-  &:hover,
-  &.active
-    background: $primary
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary - 30
-    color: #fff
+@each $btn__name, $btn__color in (default: $primary, primary: $primary, third: $third, four: $four, five: $five )
+  .btn__#{$btn__name}
+    border-radius: 6px
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px $btn__color - 30, 0 0 4px 2px $btn__color - 30
+    color: $btn__color
     .icon
-      fill: #fff
-      filter: drop-shadow(0 0 5px #000)
-  &:active
-    background: $secondary
-    transform: scale(.9)
-
-.btn__primary
-  background: $primary + 50
-  color: $secondary
-  box-shadow: 0 3px $primary - 30
-  &:hover
-    background: #fff
-    color: $primary
-    .icon
-      fill: $primary
-      filter: drop-shadow(0 0 5px #000)
-  &:active
-    background: $primary
-    box-shadow: 0 3px 10px $primary - 30
-    color: #fff
-    transform: scale(.9)
-
-.btn__third
-  &:hover
-    background: $third
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $third - 30
-    color: #fff
-    .icon
-      fill: #fff
-      filter: drop-shadow(0 0 5px #000)
-  &:active
-    background: $third
-    transform: scale(.9)
-
-.btn__four
-  &:hover
-    background: $four
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $four - 30
-    color: #fff
-    .icon
-      fill: #fff
-      filter: drop-shadow(0 0 5px #000)
-  &:active
-    background: $four
-    transform: scale(.9)
-
-.btn__five
-  &:hover
-    background: $five
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $five - 30
-    color: #fff
-    .icon
-      fill: #fff
-      filter: drop-shadow(0 0 5px #000)
-  &:active
-    background: $five
-    transform: scale(.9)
+      fill: $btn__color
+    &:hover,
+    &.active
+      background: $btn__color
+      box-shadow: 0 0 0 1px #fff, 0 0 0 3px $btn__color - 30
+      color: #fff
+      .icon
+        fill: #fff
+        filter: drop-shadow(0 0 5px #000)
+    &:active
+      background: $btn__color
+      transform: scale(.9)
 
 .btn__bullet
   background: transparent
