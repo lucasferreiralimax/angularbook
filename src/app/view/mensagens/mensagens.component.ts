@@ -53,14 +53,12 @@ export class MensagensComponent implements OnInit {
     }
   }
 
-
   pushMensagem(value: string) {
     this.chats.push({
       "name": "Yoda",
       "photo": "assets/yoda.jpg",
       "content": value,
     })
-    document.querySelector('.mensagens__input').value = ''
   }
 
   constructor() { }

@@ -1,28 +1,23 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { HomeComponent } from './view/home/home.component'
-import { AmigosComponent } from './view/amigos/amigos.component'
-import { MensagensComponent } from './view/mensagens/mensagens.component'
-import { NotfoundComponent } from './view/notfound/notfound.component'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    loadChildren: './view/home/home.module#HomeModule',
     pathMatch: 'full'
   },
   {
     path: 'amigos',
-    component: AmigosComponent
+    loadChildren: './view/amigos/amigos.module#AmigosModule'
   },
   {
     path: 'mensagens',
-    component: MensagensComponent
+    loadChildren: './view/mensagens/mensagens.module#MensagensModule'
   },
   {
     path: '**',
-    component: NotfoundComponent
+    loadChildren: './view/notfound/notfound.module#NotfoundModule'
   }
 ];
 
