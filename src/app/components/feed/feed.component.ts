@@ -1,5 +1,7 @@
-import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core'
+import { FormControl } from '@angular/forms'
+
+import { PostService } from '../../services/post.service'
 
 @Component({
   selector: 'app-feed',
@@ -9,49 +11,17 @@ import { FormControl } from '@angular/forms';
 })
 export class FeedComponent implements OnInit {
 
-  @HostListener('window:resize', ['$event'])
-  sizeChange(event) {
-    console.log(event);
+  constructor(private postService:PostService) { }
+
+  feed = []
+
+  getFeed(): void {
+    this.postService.getFeed()
+        .subscribe(feed => this.feed = feed)
   }
-
-  feed = [
-    {
-      "name": "Lucas",
-      "photo": "assets/skywalker.jpg",
-      "content": "I am your father.",
-    },
-    {
-      "name": "Yoda",
-      "photo": "assets/yoda.jpg",
-      "content": "Faça ou não faça. A tentativa não existe.",
-    },
-    {
-      "name": "Luke",
-      "photo": "assets/luke.jpg",
-      "content": "Eu nunca treinarei outra geração de Jedi.",
-    },
-    {
-      "name": "HanSolo",
-      "photo": "assets/hansolo.jpg",
-      "content": "Nessas ruas perigosas, um jovem luta pela sobrevivência, mas anseia por voar entre as estrelas.",
-    },
-    {
-      "name": "Chewbacca",
-      "photo": "assets/chewbacca.jpg",
-      "content": "RWGWGWARAHHHHWWRGGWRWRW.",
-    }
-  ]
-
-  setFeed() {
-    localStorage.setItem('feed', JSON.stringify(this.feed))
-  }
-
-  constructor() { }
 
   ngOnInit() {
-    console.log(document.querySelector('.feed'))
-    let test = () => console.log("teste",)
-    window.addEventListener("resize", test)
-    this.setFeed()
+    this.postService.setFeed()
+    this.getFeed()
   }
 }

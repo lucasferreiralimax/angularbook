@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { PostService } from '../../services/post.service'
+
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -26,7 +28,12 @@ export class PostComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  newPost(value) {
+    console.log(value)
+    this.postService.addFeed(value)
+  }
+
+  constructor(private postService:PostService) { }
 
   ngOnInit() {
   }
