@@ -1,4 +1,5 @@
 @import "../../../styles/base/_variables"
+@import "../../../styles/base/_mixins"
 
 .amigos
   .status
@@ -27,6 +28,8 @@
     position: relative
     &:hover
       padding: 40px 20px
+      img
+        box-shadow: 0 0 0 1px #fff, 0 0 6px 2px $primary
       .amigo__quote
         opacity: 1
         margin-top: 10px
@@ -44,18 +47,48 @@
     font-size: .8em
     opacity: 0
     margin: 0
+    position: absolute
     transition: .3s all
-    background: #333
+    background: $primary
     color: #fff
     display: inline-block
-    border-radius: 6px
+    border-radius: 4px
     clear: both
     float: left
     transform: scale(0)
+    left: 20px
+    bottom: 20px
+    box-sizing: border-box
+    box-shadow: 0 0 0 1px #fff, 0 0 6px 2px $primary
+    &:after
+      content: ''
+      width: 1px
+      height: 1px
+      border: 8px solid transparent
+      border-bottom: 8px solid $primary
+      display: block
+      position: absolute
+      top: -15px
+      left: 16px
+      z-index: 2
+    &:before
+      content: ''
+      width: 1px
+      height: 1px
+      border: 8px solid transparent
+      border-bottom: 8px solid #fff
+      display: block
+      position: absolute
+      top: -17px
+      left: 16px
+      filter: drop-shadow(0 0 6px $primary)
+      z-index: 1
+    +tablet
+      width: auto
   img
     border-radius: 4px
     float: left
-    margin: 0 20px 10px 0
+    margin-right: 20px
     transition: .3s all
   h1
     margin: 0
@@ -63,6 +96,7 @@
     display: inline-block
     float: left
     line-height: 50px
+    font-size: 1em
   span
     display: inline-block
     margin: 5px 10px 0

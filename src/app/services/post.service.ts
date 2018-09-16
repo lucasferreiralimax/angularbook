@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { Observable, of } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +49,7 @@ export class PostService {
     localStorage.setItem('feed', JSON.stringify(this.feed))
   }
 
-  getFeed(): Observable {
+  getFeed() {
     return of(this.feed)
   }
 }
