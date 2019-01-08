@@ -24,7 +24,7 @@
       </button>
     </li>
     <li>
-      <button class="btn btn__five" type="button" name="checkin">
+      <button class="btn btn__five" type="button" name="checkin" (click)="checkIn()">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.999 511.999" width="20" height="20">
           <path d="M255.999 0C154.611 0 72.128 82.484 72.128 183.871c0 32.162 9.497 69.406 28.227 110.696 14.817 32.666 35.444 68.004 61.306 105.033 43.912 62.874 88.463 109.647 88.908 110.112 2.917 3.049 7.945 3.049 10.862 0 .445-.465 44.996-47.238 88.908-110.112 25.862-37.03 46.489-72.367 61.306-105.033 18.73-41.291 28.227-78.534 28.227-110.696C439.87 82.484 357.386 0 255.999 0zm82.135 390.824c-34.333 49.183-69.052 88.354-82.136 102.652-13.083-14.298-47.802-53.468-82.136-102.652-56.722-81.256-86.705-152.819-86.705-206.953 0-93.099 75.742-168.841 168.841-168.841s168.841 75.742 168.841 168.841c0 54.133-29.982 125.697-86.705 206.953z"/>
           <path d="M332.373 71.599c-2.785-1.899-5.634-3.795-8.601-5.4-2.143-1.16-4.729-1.257-6.93-.183-4.529 2.206-5.607 8.384-2.099 11.996 1.152 1.186 2.724 1.897 4.12 2.751a120.41 120.41 0 0 1 5.045 3.258c33.084 22.546 52.835 59.874 52.835 99.852 0 66.578-54.165 120.744-120.744 120.744S135.255 250.45 135.255 183.872 189.42 63.127 255.999 63.127c10.228 0 20.386 1.28 30.193 3.804a7.511 7.511 0 0 0 9.151-5.405 7.515 7.515 0 0 0-5.406-9.151 136.226 136.226 0 0 0-33.938-4.279c-74.866 0-135.774 60.908-135.774 135.774s60.908 135.775 135.774 135.775 135.774-60.908 135.774-135.774c0-44.953-22.206-86.924-59.4-112.272z"/>
@@ -32,9 +32,12 @@
         </svg>
         <span>Check-in</span>
       </button>
+      <section class="checkin" [ngClass]="{'active': check }">
+        <input class="checkin__input" type="text" name="amigo" placeholder="Digite o lugar...">
+      </section>
     </li>
     <li>
-      <button class="btn btn__default" type="button" name="mark">
+      <button class="btn btn__default" type="button" name="mark" (click)="markFriend()" [ngClass]="{'active': markFriends }">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.615 472.615" width="20" height="20">
           <path d="M382.128 277.457c-49.974 0-90.487 40.512-90.487 90.485 0 49.976 40.513 90.488 90.487 90.488 49.975 0 90.487-40.512 90.487-90.488 0-49.973-40.512-90.485-90.487-90.485zm55.49 100.337h-45.644v45.635h-19.692v-45.635h-45.644v-19.692h45.644v-45.644h19.692v45.644h45.644v19.692z"/>
           <circle cx="207.852" cy="112.292" r="98.107"/>
@@ -42,6 +45,9 @@
         </svg>
         <span>Marcar amigos</span>
       </button>
+      <section class="mark__amigos" [ngClass]="{'active': markFriends }">
+        <input class="mark__input" type="text" name="amigo" placeholder="Digite o nome...">
+      </section>
     </li>
     <li *ngIf="btnSubmit">
       <button class="btn btn__third active" type="button" name="button" (click)="newPost(post.value)">
@@ -52,4 +58,5 @@
       </button>
     </li>
   </ul>
+  <div class="overlay" (click)="checkIn();markFriend()" [ngClass]="{'active': (check || markFriends) }"></div>
 </section>

@@ -13,6 +13,8 @@ export class PostComponent implements OnInit {
   value = ''
   erroSize = false
   btnSubmit = false
+  check = false
+  markFriends = false
 
   update(value: string) {
     this.value = value
@@ -31,6 +33,14 @@ export class PostComponent implements OnInit {
   newPost(value) {
     console.log(value)
     this.postService.addFeed(value)
+  }
+
+  checkIn() {
+    this.check = !this.check
+  }
+
+  markFriend() {
+    this.markFriends = !this.markFriends
   }
 
   constructor(private postService:PostService) { }
