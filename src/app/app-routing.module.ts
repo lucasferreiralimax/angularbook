@@ -4,20 +4,20 @@ import { Routes, RouterModule } from '@angular/router'
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './view/home/home.module#HomeModule',
+    loadChildren: () => import('./view/home/home.module').then(m => m.HomeModule),
     pathMatch: 'full'
   },
   {
     path: 'amigos',
-    loadChildren: './view/amigos/amigos.module#AmigosModule'
+    loadChildren: () => import('./view/amigos/amigos.module').then(m => m.AmigosModule)
   },
   {
     path: 'mensagens',
-    loadChildren: './view/mensagens/mensagens.module#MensagensModule'
+    loadChildren: () => import('./view/mensagens/mensagens.module').then(m => m.MensagensModule)
   },
   {
     path: '**',
-    loadChildren: './view/notfound/notfound.module#NotfoundModule'
+    loadChildren: () => import('./view/notfound/notfound.module').then(m => m.NotfoundModule)
   }
 ];
 
