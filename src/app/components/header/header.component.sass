@@ -5,7 +5,10 @@
 .header
   background: $primary
   color: #fff
-  padding: 10px
+  padding: 0 8px
+  height: 42px
+  display: flex
+  align-items: center
   position: fixed
   top: 0
   left: 0
@@ -15,7 +18,7 @@
 
 .logo
   cursor: pointer
-  display: none
+  display: inline-flex
   font-size: 1.5em
   user-select: none
   filter: drop-shadow(0 2px 0 $secondary)
@@ -33,5 +36,3 @@
     fill: #fff
     margin-right: 10px
     transition: .3s all
-  +tablet
-    display: inline
