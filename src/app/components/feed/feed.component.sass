@@ -14,24 +14,13 @@
 
 .feed__post
   background: #fff
-  border-radius: 6px
-  box-shadow: inset 0 -4px 10px rgba(#000, .15)
+  border-radius: 3px
+  border: 1px solid #dddfe2
   box-sizing: border-box
   margin-bottom: 10px
-  padding: 20px
+  padding: 12px
   transition: .3s all
   will-change: all
-  &:hover
-    padding-bottom: 50px
-    .feed__photo
-      animation: force 3s infinite alternate
-      transition: .3s all
-    .feed__content
-      h1
-        border-bottom-color: $primary
-        color: $primary
-      p
-        color: $secondary
   &:after
     clear: both
     content: ''
@@ -46,7 +35,7 @@
 .feed__photo
   border-radius: 100%
   float: left
-  margin-right: 20px
+  margin-right: 8px
   transition: .3s all
 
 .feed__content
@@ -61,6 +50,8 @@
     width: 100%
     font-size: 14px
   h1
-    border-bottom: 2px dotted #ccc
+    color: $third
+    font-weight: 600
     margin: 0
-    padding-bottom: 10px
+  p
+    margin: 8px 0
