@@ -1,0 +1,33 @@
+.search
+  height: 26px
+  min-width: 144px
+  max-width: 448px
+  width: 100%
+  background: #fff
+  border: 1px solid #3b5998
+  border-radius: 3px
+  box-sizing: border-box
+  display: flex
+  align-items: center
+  justify-content: center
+.search__input
+  background: transparent
+  border: 0
+  outline: none
+  height: 100%
+  padding: 5px
+  &:focus ~ .search__button
+    background: #4080ff
+    svg
+      fill: #fff
+.search__button
+  background: transparent
+  font-size: 0
+  border: 0
+  height: 100%
+  padding: 0 16px
+  cursor: pointer
+  transition: .3s all
+  svg
+    fill: #4e5665
+    transition: .3s all

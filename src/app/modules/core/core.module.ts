@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router'
 
 import { HeaderComponent } from '@components/header/header.component';
 import { NavComponent } from '@components/nav/nav.component';
-import { SearchComponent } from '@components/search/search.component';
+import { SearchComponent } from '@components/header/search/search.component';
 
 
 @NgModule({
