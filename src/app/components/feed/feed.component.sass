@@ -4,13 +4,6 @@
 .feed
   clear: both
   padding: 10px 0
-  +tablet
-    float: left
-    width: 70%
-  +desktop
-    align-items: stretch
-    display: flex
-    flex-wrap: wrap
 
 .feed__post
   background: #fff
@@ -18,40 +11,34 @@
   border: 1px solid #dddfe2
   box-sizing: border-box
   margin-bottom: 10px
-  padding: 12px
   transition: .3s all
   will-change: all
   &:after
     clear: both
     content: ''
     display: table
-  +desktop
-    float: left
-    margin-right: 10px
-    width: calc(50% - 5px)
-    &:nth-of-type(2n)
-      margin-right: 0
 
 .feed__photo
   border-radius: 100%
   float: left
   margin-right: 8px
-  transition: .3s all
+  display: inline-block
+
+.feed__date
+  color: #616770
+  font-size: 12px
 
 .feed__content
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
   margin: 0
-  transition: .3s all
-  will-change: font-size
+  padding: 12px
+  font-size: 14px
   h1, p
     transition: .3s all
     width: 100%
-    font-size: 14px
   h1
     color: $third
     font-weight: 600
+    font-size: 14px
     margin: 0
   p
     margin: 8px 0

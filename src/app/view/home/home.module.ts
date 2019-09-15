@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 
 import { HomeComponent } from './home.component'
 import { FeedComponent } from '@components/feed/feed.component';
+import { CommentComponent } from '@components/feed/comment/comment.component';
 
 import { HomeRoutingModule } from './home-routing.module'
 
@@ -13,7 +14,8 @@ import { HomeRoutingModule } from './home-routing.module'
   ],
   declarations: [
     HomeComponent,
-    FeedComponent
+    FeedComponent,
+    CommentComponent
   ]
 })
 export class HomeModule { }
