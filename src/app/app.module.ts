@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { SearchComponent } from './components/search/search.component';
     AppComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent,
     SearchComponent,
   ],
   imports: [

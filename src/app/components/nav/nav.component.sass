@@ -1,12 +1,18 @@
 @import "../../../styles/base/_mixins"
+@import "../../../styles/base/_variables"
 
 .nav
   display: inline-flex
-  .btn
-    margin-right: 10px
-    &:last-of-type
-      margin-right: 0
-    .text
-      font-size: 0
+
+.btn__bullet
+  background: transparent
+  padding: 5px
+  box-shadow: none
+  &:hover
+    transform: scale(1.1)
     .icon
-      margin: 0
+      fill: #fff
+      filter: drop-shadow(0 0 5px rgba(#000, .5))
+  .icon
+    fill: $secondary
+    filter: drop-shadow(0 0 5px rgba(#fff, .5))
