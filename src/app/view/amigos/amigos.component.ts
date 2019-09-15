@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 
-import { AmigosService } from '../../services/amigos.service'
+import { AmigosService } from '@services/amigos.service'
 
 @Component({
   selector: 'app-amigos',
