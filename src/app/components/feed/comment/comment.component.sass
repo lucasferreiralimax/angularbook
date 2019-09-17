@@ -2,6 +2,7 @@
   border-top: 1px
   padding: 8px 12px
   border-top: 1px solid #dadde1
+  position: relative
 .comment__photo
   border-radius: 100%
   float: left
@@ -14,3 +15,21 @@
     padding: 8px 12px
     margin-left: 40px
     outline: none
+.comment__options
+  position: absolute
+  right: 18px
+  top: 10px
+  button
+    background: transparent
+    border: 0
+    padding: 6px 0 4px
+    margin: 0 5px
+    cursor: pointer
+    outline: none
+    svg
+      fill: #777
+      transition: .3s all
+    &:hover,
+    &:focus
+      svg
+        fill: #222

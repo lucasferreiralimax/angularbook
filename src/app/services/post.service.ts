@@ -25,7 +25,13 @@ export class PostService {
       "name": "Luke",
       "photo": "assets/luke.jpg",
       "date": "15 de Setembro às 15:33",
-      "content": "Eu nunca treinarei outra geração de Jedi.",
+      "content": `Eu nunca treinarei outra geração de Jedi
+      <br>
+      Então se prepara gurizada que a força esteja com você.
+      <br>
+      <br>
+      Abraços Fé
+      `,
     },
     {
       "name": "HanSolo",

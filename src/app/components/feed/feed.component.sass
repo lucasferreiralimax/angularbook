@@ -21,6 +21,23 @@
   float: left
   margin-right: 8px
   display: inline-block
+  cursor: pointer
+  outline: none
+
+.feed__header
+  float: left
+  h1, .feed__date
+    display: inline-block
+    float: left
+    cursor: pointer
+    outline: none
+    &:hover
+      text-decoration: underline
+  h1
+    color: $third
+    font-weight: 600
+    font-size: 14px
+    margin: 0
 
 .feed__date
   color: #616770
@@ -28,15 +45,10 @@
 
 .feed__content
   margin: 0
-  padding: 12px
+  padding: 12px 12px 0
   font-size: 14px
   h1, p
     transition: .3s all
-    width: 100%
-  h1
-    color: $third
-    font-weight: 600
-    font-size: 14px
-    margin: 0
   p
-    margin: 8px 0
+    margin: 10px 0
+    clear: left
