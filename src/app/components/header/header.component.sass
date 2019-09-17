@@ -4,6 +4,7 @@
 
 .header
   background: $primary
+  border-bottom: 1px solid #29487d
   color: #fff
   height: 42px
   position: fixed
@@ -11,7 +12,6 @@
   left: 0
   right: 0
   z-index: 9
-  box-shadow: inset 0 1px 0 $secondary, 0 1px 0 rgba(#fff, .6), 0 4px 10px rgba(#000, .3)
 .header__content
   height: 42px
   padding: 0 8px
@@ -19,7 +19,8 @@
   margin: 0 auto
   display: flex
   align-items: center
-
+  .box
+    width: 100%    
 .logo
   cursor: pointer
   display: inline-flex
