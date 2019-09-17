@@ -29,6 +29,11 @@
             "styles": [
               "src/styles/styles.sass"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles/base"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

@@ -1,5 +1,5 @@
-@import "../../../styles/base/_animations"
-@import "../../../styles/base/_mixins"
+@import "_animations"
+@import "_mixins"
 
 .feed
   clear: both
@@ -13,10 +13,8 @@
   margin-bottom: 10px
   transition: .3s all
   will-change: all
-  &:after
-    clear: both
-    content: ''
-    display: table
+  +tablet
+    width: 50%
 
 .feed__photo
   border-radius: 100%
