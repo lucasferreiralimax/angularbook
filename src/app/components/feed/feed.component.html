@@ -1,12 +1,13 @@
 <section class="feed">
   <article class="feed__post" *ngFor="let post of feed">
-    <div class="feed__content">
+    <div class="feed__container">
       <img class="feed__photo" [routerLink]="[user.name | lowercase]" [src]="post.photo" [alt]="post.name" width="40" height="40">
       <div class="feed__header">
         <h1 [routerLink]="[user.name | lowercase]">{{ post.name }}</h1>
         <p class="feed__date" [routerLink]="[user.name | lowercase]">{{ post.date }}</p>
       </div>
-      <p [innerHTML]="post.content"></p>
+      <div class="feed__content" [innerHTML]="post.content">
+      </div>
     </div>
     <app-comment [user]="user"></app-comment>
   </article>

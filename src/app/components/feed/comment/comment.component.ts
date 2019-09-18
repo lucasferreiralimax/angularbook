@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-comment',
@@ -8,10 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CommentComponent implements OnInit {
 
   @Input() user: any;
+  @ViewChild('comment', {static: true}) comment: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
+    // console.log(this.comment.nativeElement);
   }
 
 }

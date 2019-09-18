@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common'
 import { HomeComponent } from './home.component'
 import { FeedComponent } from '@components/feed/feed.component';
 import { CommentComponent } from '@components/feed/comment/comment.component';
+import { CommentDirective } from '@directives/comment.directive';
 
 import { HomeRoutingModule } from './home-routing.module'
 
@@ -15,7 +16,8 @@ import { HomeRoutingModule } from './home-routing.module'
   declarations: [
     HomeComponent,
     FeedComponent,
-    CommentComponent
+    CommentComponent,
+    CommentDirective
   ]
 })
 export class HomeModule { }

@@ -6,6 +6,7 @@
       "@services/*": ["app/services/*"],
       "@components/*": ["app/components/*"],
       "@modules/*": ["app/modules/*"],
+      "@directives/*": ["app/directives/*"]
     },
     "downlevelIteration": true,
     "importHelpers": true,
