@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-comment',
@@ -8,12 +8,17 @@ import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 export class CommentComponent implements OnInit {
 
   @Input() user: any;
-  @ViewChild('comment', {static: true}) comment: ElementRef;
+  @ViewChild('commentContent', {static: true}) commentContent: ElementRef;
 
   constructor() { }
 
+  @HostListener('click', ['$event.target']) onClick(el) {
+    if(el.className == "comment__photo") {
+      this.commentContent.nativeElement.focus()
+    }
+  }
+
   ngOnInit() {
-    // console.log(this.comment.nativeElement);
   }
 
 }
