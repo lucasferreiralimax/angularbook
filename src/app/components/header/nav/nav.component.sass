@@ -1,0 +1,74 @@
+@import "_mixins"
+@import "_variables"
+
+.nav
+  display: flex
+  justify-content: flex-end
+
+.nav__photo
+  border-radius: 100%
+  margin-right: 8px
+
+.btn__bullet
+  background: transparent
+  padding: 5px 8px
+  margin: 0 5px
+  font-size: 12px
+  font-weight: bold
+  box-shadow: none
+  color: #fff
+  display: inline-flex
+  align-items: center
+  flex-direction: row-reverse
+  &:hover
+    background: rgba($secondary, .2)
+    .icon
+      fill: #fff
+      filter: drop-shadow(0 0 5px rgba(#000, .5))
+  &.no-text
+    font-size: 0
+    margin: 0
+    .icon
+      margin-right: 0
+  &.photo
+    padding: 0 10px 0 4px
+  &.divider
+    position: relative
+    &:before,
+    &:after
+      background: rgba(0, 0, 0, .1)
+      content: ''
+      display: block
+      height: 18px
+      position: absolute
+      top: 6px
+      width: 1px
+    &:before,
+      left: -5px
+    &:after
+      right: -5px
+    + .btn
+      margin-left: 5px
+  .icon
+    margin-right: 10px
+    fill: $secondary
+    filter: drop-shadow(0 0 5px rgba(#fff, .5))
+  +mobile
+    &.home
+      display: none
+    &:first-of-type
+      position: relative
+      padding: 0 4px
+      &:after
+        background: rgba(0, 0, 0, .1)
+        content: ''
+        display: block
+        height: 18px
+        position: absolute
+        top: 6px
+        width: 1px
+        right: -5px
+      span
+        font-size: 0
+      .nav__photo
+        margin: 0
