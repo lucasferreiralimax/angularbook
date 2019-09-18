@@ -1,5 +1,5 @@
 <nav class="nav">
-  <a class="btn btn__bullet photo" [routerLink]="[user.name | lowercase]">
+  <a class="btn btn__bullet photo" [routerLink]="['perfil', user.id_user]">
     <span class="text">{{ user.name}}</span>
     <img class="nav__photo" [src]="user.photo" [alt]="user.name" width="23" height="23">
   </a>

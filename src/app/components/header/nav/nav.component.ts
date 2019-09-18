@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UsuarioService } from '../../../services/usuario.service'
+import { UsuarioService } from '@services/usuario.service'
 
 @Component({
   selector: 'app-nav',
@@ -14,7 +14,7 @@ export class NavComponent implements OnInit {
   user = {}
 
   ngOnInit() {
-    this.user = this.usuarioService.getUser()
+    this.user = this.usuarioService.getUserBasic()
   }
 
 }

@@ -8,6 +8,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'perfil/:id',
+    loadChildren: () => import('./view/profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
     path: 'amigos',
     loadChildren: () => import('./view/amigos/amigos.module').then(m => m.AmigosModule)
   },
@@ -17,6 +21,10 @@ const routes: Routes = [
   },
   {
     path: '**',
+    redirectTo: '404'
+  },
+  {
+    path: '404',
     loadChildren: () => import('./view/notfound/notfound.module').then(m => m.NotfoundModule)
   }
 ];

@@ -1,0 +1,36 @@
+.perfil__cover
+  background-size: cover
+  background-position: center
+  height: 315px
+  display: flex
+  justify-content: flex-start
+  align-items: flex-end
+  position: relative
+  &:before
+    content: ''
+    display: flex
+    height: 100%
+    width: 100%
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    top: 0
+    background: linear-gradient(rgba(0,0,0,0) 71%, rgba(0,0,0, .53))
+    border: 1px solid rgba(0, 0, 0, .4)
+    border-top-color: rgba(0, 0, 0, .1)
+    box-sizing: border-box
+    z-index: 1
+  h1
+    color: #fff
+    font-size: 25px
+    font-weight: bold
+    text-rendering: optimizelegibility
+    text-shadow: 0 0 3px rgba(0, 0, 0, .8)
+    z-index: 2
+.perfil__photo
+  border-radius: 100%
+  border: 4px solid #fff
+  margin: 0 20px
+  transform: translateY(40px)
+  z-index: 2
