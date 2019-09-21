@@ -1,7 +1,11 @@
 <section class="post">
-  <div class="post__container">
+  <div class="post__container" [ngClass]="{ active: isPostagem }">
     <img class="post__photo" [src]="user.photo" [alt]="user.name" width="40" height="40">
-    <span #postContent class="post__input_content" contenteditable appComment>Escreva um comentário...</span>
+    <span #postContent [ngClass]="{ active: isPostagem }" class="post__input_content" contenteditable appPostComment (updatePostagem)="activePostagem($event)" (updatePlaceholder)="placeholderPostagem($event)"></span>
+    <svg *ngIf="isPostagem" (click)="activePostagem(false)" class="post__close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" width="12">
+      <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"/>
+    </svg>
+    <span class="post__input_placeholder" [ngClass]="{ focus: isPlaceholder == 'focus', disable: isPlaceholder == 'disable' }">No que você está pensando, {{ userBasic.name.split(" ")[0] }}?</span>
     <div class="post__input_options">
       <button type="button" name="button">
         <i class="sprite photo__video"></i>
@@ -16,6 +20,7 @@
         <span>Sentimento/atividade</span>
       </button>
     </div>
-    <button (click)="onSubmitPost()" type="button" name="button">Publicar</button>
+    <button *ngIf="isPostagem" (click)="onSubmitPost()" type="button" name="button" class="btn default full" [ngClass]="{ disable: isPlaceholder == 'focus'}">Publicar</button>
   </div>
+  <div class="post__overlay" [ngClass]="{ active: isPostagem }" (click)="activePostagem(false)"></div>
 </section>

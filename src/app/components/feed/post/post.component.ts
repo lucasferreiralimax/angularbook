@@ -15,6 +15,10 @@ export class PostComponent implements OnInit {
 
   constructor(private postService:PostService) { }
 
+  isPostagem: boolean = false;
+  isPlaceholder: String;
+  userBasic: any;
+
   @HostListener('click', ['$event.target']) onClick(el) {
     if(el.className == "post__photo") {
       this.postContent.nativeElement.focus()
@@ -22,14 +26,28 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userBasic = JSON.parse(localStorage.getItem("usuario"));
   }
 
   getFeed() {
     this.updateFeed.next();
   }
 
+  activePostagem(value) {
+    this.isPostagem = value;
+    console.log(this.postContent.nativeElement.textContent);
+    if(this.postContent.nativeElement.textContent == "") {
+      this.isPlaceholder = "";
+    }
+  }
+
+  placeholderPostagem(value) {
+    this.isPlaceholder = value;
+    console.log(value)
+  }
+
   onSubmitPost() {
-    let { email, _id, name } = JSON.parse(localStorage.getItem("usuario")),
+    let { email, _id, name } = this.userBasic,
     postData = {
       iduser: _id,
       name: name,
@@ -39,21 +57,22 @@ export class PostComponent implements OnInit {
       comment: ""
     };
 
-    if(this.postContent.nativeElement.textContent) {
-      postData.comment = this.postContent.nativeElement.textContent;
-    }
+    let commentText = this.postContent.nativeElement.textContent;
 
-    console.log(postData)
-    this.postService.setPost(postData).subscribe(
-      res => {
-        console.log("Resposta serviço: ", res);
-        this.getFeed();
-        this.postContent.nativeElement.textContent = ''
-      },
-      err => {
-        console.log("Error occured");
-      }
-    )
+    if(commentText) {
+      postData.comment = this.postContent.nativeElement.textContent;
+      this.postService.setPost(postData).subscribe(
+        res => {
+          console.log("Resposta serviço: ", res);
+          this.getFeed();
+          this.postContent.nativeElement.textContent = "";
+          this.activePostagem(false);
+        },
+        err => {
+          console.log("Error occured");
+        }
+      )
+    }
   }
 
 }

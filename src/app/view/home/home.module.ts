@@ -5,7 +5,7 @@ import { HomeComponent } from './home.component'
 import { FeedComponent } from '@components/feed/feed.component';
 import { PostComponent } from '@components/feed/post/post.component';
 import { CommentComponent } from '@components/feed/comment/comment.component';
-import { CommentDirective } from '@directives/comment.directive';
+import { PostCommentDirective } from '@directives/postcomment.directive';
 
 import { HomeRoutingModule } from './home-routing.module'
 
@@ -19,7 +19,7 @@ import { HomeRoutingModule } from './home-routing.module'
     FeedComponent,
     PostComponent,
     CommentComponent,
-    CommentDirective
+    PostCommentDirective
   ]
 })
 export class HomeModule { }
