@@ -1,6 +1,6 @@
 <section class="feed">
   <app-post [user]="user" (someEvent)="testePhone()"></app-post>
-  <article class="feed__post" *ngFor="let post of feed.slice().reverse() ">
+  <article class="feed__post" *ngFor="let post of feed">
     <div class="feed__container">
       <img class="feed__photo" [routerLink]="['perfil', user.id_user]" [src]="post.photo" [alt]="post.name" width="40" height="40">
       <div class="feed__header">
