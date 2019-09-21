@@ -1,0 +1,21 @@
+<section class="post">
+  <div class="post__container">
+    <img class="post__photo" [src]="user.photo" [alt]="user.name" width="40" height="40">
+    <span #postContent class="post__input_content" contenteditable appComment>Escreva um comentário...</span>
+    <div class="post__input_options">
+      <button type="button" name="button" (click)="callParent()">
+        <i class="sprite photo__video"></i>
+        <span>Foto/vídeo</span>
+      </button>
+      <button type="button" name="button">
+        <i class="sprite user__mark"></i>
+        <span>Marcar amigos</span>
+      </button>
+      <button type="button" name="button">
+        <i class="sprite smile"></i>
+        <span>Sentimento/atividade</span>
+      </button>
+    </div>
+    <button (click)="onSubmitPost()" type="button" name="button">Publicar</button>
+  </div>
+</section>
