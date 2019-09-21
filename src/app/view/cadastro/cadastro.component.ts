@@ -18,6 +18,7 @@ export class CadastroComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
+      password: ['', Validators.required],
       bio: '',
       location: '',
       relationship: ''

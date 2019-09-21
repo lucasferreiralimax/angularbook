@@ -3,8 +3,8 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
     <label for="email">Email:</label>
     <input id="email" type="email" formControlName="email" required>
-    <label for="name">Senha:</label>
-    <input id="name" type="password">
+    <label for="senha">Senha:</label>
+    <input id="senha" type="password" formControlName="password">
     <button type="submit" name="button" [disabled]="!loginForm.valid">Enviar</button>
   </form>
 </section>
