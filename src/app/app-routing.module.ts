@@ -20,6 +20,14 @@ const routes: Routes = [
     loadChildren: () => import('./view/mensagens/mensagens.module').then(m => m.MensagensModule)
   },
   {
+    path: 'cadastro',
+    loadChildren: () => import('./view/cadastro/cadastro.module').then(m => m.CadastroModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./view/login/login.module').then(m => m.LoginModule)
+  },
+  {
     path: '**',
     redirectTo: '404'
   },
