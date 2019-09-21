@@ -1,0 +1,10 @@
+<section class="login">
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" required>
+    <label for="name">Senha:</label>
+    <input id="name" type="password">
+    <button type="submit" name="button" [disabled]="!loginForm.valid">Enviar</button>
+  </form>
+</section>
