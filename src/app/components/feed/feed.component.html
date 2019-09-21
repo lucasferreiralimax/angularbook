@@ -1,13 +1,13 @@
 <section class="feed">
-  <article class="feed__post" *ngFor="let post of feed">
+  <app-post [user]="user" (someEvent)="testePhone()"></app-post>
+  <article class="feed__post" *ngFor="let post of feed.slice().reverse() ">
     <div class="feed__container">
       <img class="feed__photo" [routerLink]="['perfil', user.id_user]" [src]="post.photo" [alt]="post.name" width="40" height="40">
       <div class="feed__header">
         <h1 [routerLink]="['perfil', user.id_user]">{{ post.name }}</h1>
-        <p class="feed__date" [routerLink]="['perfil', user.name]">{{ post.date }}</p>
+        <p class="feed__date" [routerLink]="['perfil', user.name]">{{ post.data }}</p>
       </div>
-      <div class="feed__content" [innerHTML]="post.content">
-      </div>
+      <div class="feed__content" [innerHTML]="post.comment"></div>
     </div>
     <app-comment [user]="user"></app-comment>
   </article>

@@ -10,6 +10,7 @@ import { UsuarioService } from '@services/usuario.service'
   styleUrls: ['./feed.component.sass'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class FeedComponent implements OnInit {
 
   constructor(private postService:PostService,
@@ -19,8 +20,15 @@ export class FeedComponent implements OnInit {
   user = {}
 
   getFeed(): void {
-    this.postService.getFeed()
-        .subscribe(feed => this.feed = feed)
+    console.log(this.postService.getListagem())
+    this.postService.getListagem().subscribe(data =>  {
+      console.log(data);
+      this.feed = data
+    });
+  }
+
+  testePhone() {
+    this.getFeed()  
   }
 
   ngOnInit() {

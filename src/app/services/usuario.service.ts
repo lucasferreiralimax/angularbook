@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   user = {
     "id_user": "lucas",
@@ -29,7 +30,29 @@ export class UsuarioService {
     }
     return basic
   }
+
   getUser() {
     return this.user
+  }
+
+  setUser(obj) {
+
+    console.log(obj);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    return this.http.post("http://localhost:3000/api/cadastro", obj, httpOptions)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log("Error occured");
+        }
+      );
   }
 }
