@@ -20,15 +20,7 @@ export class FeedComponent implements OnInit {
   user = {}
 
   getFeed(): void {
-    console.log(this.postService.getListagem())
-    this.postService.getListagem().subscribe(data =>  {
-      console.log(data);
-      this.feed = data
-    });
-  }
-
-  testePhone() {
-    this.getFeed()  
+    this.postService.getListagem().subscribe(res => this.feed = res);
   }
 
   ngOnInit() {

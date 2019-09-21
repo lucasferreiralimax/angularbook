@@ -10,7 +10,7 @@ import { PostService } from '@services/post.service'
 export class PostComponent implements OnInit {
 
   @Input() user: any;
-  @Output() someEvent = new EventEmitter<string>();
+  @Output() updateFeed = new EventEmitter<any>();
   @ViewChild('postContent', {static: true}) postContent: ElementRef;
 
   constructor(private postService:PostService) { }
@@ -24,13 +24,13 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  callParent() {
-    this.someEvent.next();
+  getFeed() {
+    this.updateFeed.next();
   }
 
   onSubmitPost() {
-    let { email, _id, name } = JSON.parse(localStorage.getItem("usuario"))
-    let postData = {
+    let { email, _id, name } = JSON.parse(localStorage.getItem("usuario")),
+    postData = {
       iduser: _id,
       name: name,
       email: email,
@@ -38,24 +38,22 @@ export class PostComponent implements OnInit {
       data: new Date(),
       comment: ""
     };
+
     if(this.postContent.nativeElement.textContent) {
       postData.comment = this.postContent.nativeElement.textContent;
-      this.postContent.nativeElement.textContent = ''
     }
-    // console.log(this.postContent.nativeElement.textContent)
 
-    // console.warn('Your order has been submitted', postData);
     console.log(postData)
     this.postService.setPost(postData).subscribe(
       res => {
-        console.log("testes", res);
-        this.someEvent.next();
+        console.log("Resposta serviço: ", res);
+        this.getFeed();
+        this.postContent.nativeElement.textContent = ''
       },
       err => {
         console.log("Error occured");
       }
     )
-    // this.registerForm.reset();
   }
 
 }
