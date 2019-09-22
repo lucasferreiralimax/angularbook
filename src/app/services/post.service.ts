@@ -9,12 +9,6 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  feed;
-
-  setFeed() {
-    localStorage.setItem('feed', JSON.stringify(this.feed))
-  }
-
   getListagem() {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -31,7 +25,6 @@ export class PostService {
         'Content-Type':  'application/json'
       })
     };
-
     return this.http.post("http://localhost:3000/api/insert/user/post", obj, httpOptions)
   }
 }

@@ -19,6 +19,8 @@ export class CadastroComponent implements OnInit {
       name: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
+      photo: 'assets/skywalker.jpg',
+      background: 'assets/cover.jpg',
       bio: '',
       location: '',
       relationship: ''
@@ -26,7 +28,14 @@ export class CadastroComponent implements OnInit {
   }
   onSubmit(formData) {
     console.warn('Your order has been submitted', formData);
-    this.usuarioService.setUser(formData);
+    this.usuarioService.setUser(formData).subscribe(
+      res => {
+        console.log(res)
+      },
+      err => {
+        console.log("Error occured", err)
+      }
+    );
     this.registerForm.reset();
   }
   ngOnInit() { }

@@ -23,7 +23,14 @@ export class LoginComponent implements OnInit {
 
   onSubmit(formData) {
     console.warn('Your login submitted', formData);
-    this.loginService.loginUser(formData);
+    this.loginService.loginUser(formData).subscribe(
+      res => {
+        localStorage.setItem("usuario", JSON.stringify(res))
+      },
+      err => {
+        console.log("Error occured");
+      }
+    )
     this.loginForm.reset();
   }
 

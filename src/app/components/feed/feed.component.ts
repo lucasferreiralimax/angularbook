@@ -16,16 +16,15 @@ export class FeedComponent implements OnInit {
   constructor(private postService:PostService,
               private usuarioService:UsuarioService) { }
 
-  feed = []
-  user = {}
+  feed;
+  user;
 
   getFeed(): void {
     this.postService.getListagem().subscribe(res => this.feed = res);
   }
 
   ngOnInit() {
-    this.postService.setFeed()
-    this.user = this.usuarioService.getUserBasic()
+    this.user = this.usuarioService.getUser()
     this.getFeed()
   }
 }

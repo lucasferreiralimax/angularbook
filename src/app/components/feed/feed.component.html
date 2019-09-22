@@ -1,5 +1,5 @@
-<section class="feed">
-  <app-post [user]="user" (updateFeed)="getFeed()"></app-post>
+<section class="feed" *ngIf="feed">
+  <app-post *ngIf="user" [user]="user" (updateFeed)="getFeed()"></app-post>
   <article class="feed__post" *ngFor="let post of feed">
     <div class="feed__container">
       <img class="feed__photo" [routerLink]="['perfil', user.id_user]" [src]="post.photo" [alt]="post.name" width="40" height="40">

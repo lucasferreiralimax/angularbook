@@ -63,7 +63,6 @@ export class PostComponent implements OnInit {
       postData.comment = this.postContent.nativeElement.textContent;
       this.postService.setPost(postData).subscribe(
         res => {
-          console.log("Resposta serviço: ", res);
           this.getFeed();
           this.postContent.nativeElement.textContent = "";
           this.activePostagem(false);
