@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { UsuarioService } from '@services/usuario.service'
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,9 +10,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user;
+
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
+    this.user = this.usuarioService.getUser()
   }
 
 }
