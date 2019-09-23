@@ -1,8 +1,7 @@
-import { Component, OnInit, HostListener, ViewEncapsulation } from '@angular/core'
+import { Component, OnInit, HostListener, ViewEncapsulation, Input } from '@angular/core'
 import { FormControl } from '@angular/forms'
 
 import { PostService } from '@services/post.service'
-import { UsuarioService } from '@services/usuario.service'
 
 @Component({
   selector: 'app-feed',
@@ -13,18 +12,16 @@ import { UsuarioService } from '@services/usuario.service'
 
 export class FeedComponent implements OnInit {
 
-  constructor(private postService:PostService,
-              private usuarioService:UsuarioService) { }
-
+  @Input() user: any;
   feed;
-  user;
+
+  constructor(private postService:PostService) { }
 
   getFeed(): void {
     this.postService.getListagem().subscribe(res => this.feed = res);
   }
 
   ngOnInit() {
-    this.user = this.usuarioService.getUser()
     this.getFeed()
   }
 }
