@@ -1,0 +1,32 @@
+<section class="navleft">
+  <a *ngIf="user" class="btn" [routerLink]="['perfil', user.id_user]">
+    <img class="btn__photo" [src]="user.photo" [alt]="user.name" width="20" height="20">
+    <span class="btn__text">{{ user.name}}</span>
+  </a>
+  <ul>
+    <li>
+      <a class="btn active" href="/">
+        <i class="sprite icon__feed"></i>
+        <span class="btn__text">Feed de Notícias</span>
+      </a>
+    </li>
+    <li>
+      <a class="btn" routerLink="mensagens">
+        <i class="sprite icon__messenger"></i>
+        <span class="btn__text">Messenger</span>
+      </a>
+    </li>
+    <li>
+      <a class="btn" routerLink="watch">
+        <i class="sprite icon__watch"></i>
+        <span class="btn__text">Watch</span>
+      </a>
+    </li>
+    <li>
+      <a class="btn" routerLink="marketplace">
+        <i class="sprite icon__marketplace"></i>
+        <span class="btn__text">Marketplace</span>
+      </a>
+    </li>
+  </ul>
+</section>
