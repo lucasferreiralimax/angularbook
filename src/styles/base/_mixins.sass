@@ -1,8 +1,13 @@
 $tablet-width: 768px
+$minimum-desktop: 935px
 $desktop-width: 1299px
 
 =mobile
   @media (max-width: #{$tablet-width})
+    @content
+
+=minimum-desktop
+  @media (max-width: #{$minimum-desktop})
     @content
 
 =tablet
