@@ -35,7 +35,6 @@ export class PostComponent implements OnInit {
 
   activePostagem(value) {
     this.isPostagem = value;
-    console.log(this.postContent.nativeElement.textContent);
     if(this.postContent.nativeElement.textContent == "") {
       this.isPlaceholder = "";
     }
@@ -43,7 +42,6 @@ export class PostComponent implements OnInit {
 
   placeholderPostagem(value) {
     this.isPlaceholder = value;
-    console.log(value)
   }
 
   onSubmitPost() {
