@@ -8,6 +8,7 @@ import { FeedComponent } from '@components/feed/feed.component';
 import { PostComponent } from '@components/feed/post/post.component';
 import { CommentComponent } from '@components/feed/comment/comment.component';
 import { PostCommentDirective } from '@directives/postcomment.directive';
+import { FooterComponent } from '@components/footer/footer.component';
 
 import { HomeRoutingModule } from './home-routing.module'
 
@@ -23,7 +24,8 @@ import { HomeRoutingModule } from './home-routing.module'
     FeedComponent,
     PostComponent,
     CommentComponent,
-    PostCommentDirective
+    PostCommentDirective,
+    FooterComponent
   ]
 })
 export class HomeModule { }
