@@ -14,7 +14,11 @@ export class NavComponent implements OnInit {
   user;
 
   ngOnInit() {
-    this.user = this.usuarioService.getUser()
+    if(this.usuarioService.getUser()) {
+      this.user = this.usuarioService.getUser()
+    } else {
+      this.user = this.usuarioService.getUserMockado()
+    }
   }
 
 }

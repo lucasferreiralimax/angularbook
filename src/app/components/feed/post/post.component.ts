@@ -45,30 +45,35 @@ export class PostComponent implements OnInit {
   }
 
   onSubmitPost() {
-    let { email, _id, name } = this.userBasic,
-    postData = {
-      iduser: _id,
-      name: name,
-      email: email,
-      photo: "assets/skywalker.jpg",
-      data: new Date(),
-      comment: ""
-    };
-
     let commentText = this.postContent.nativeElement.textContent;
 
     if(commentText) {
-      postData.comment = this.postContent.nativeElement.textContent;
-      this.postService.setPost(postData).subscribe(
-        res => {
-          this.getFeed();
-          this.postContent.nativeElement.textContent = "";
-          this.activePostagem(false);
-        },
-        err => {
-          console.log("Error occured");
-        }
-      )
+      if(this.userBasic) {
+        let { email, _id, name } = this.userBasic,
+        postData = {
+          iduser: _id,
+          name: name,
+          email: email,
+          photo: "assets/skywalker.jpg",
+          data: new Date(),
+          comment: commentText
+        };
+
+        this.postService.setPost(postData).subscribe(
+          res => {
+            this.getFeed();
+            this.postContent.nativeElement.textContent = "";
+            this.activePostagem(false);
+          },
+          err => {
+            console.log("Error occured");
+          }
+        )
+      } else {
+        this.postService.setPostMock(commentText)
+        this.postContent.nativeElement.textContent = "";
+        this.activePostagem(false);
+      }
     }
   }
 

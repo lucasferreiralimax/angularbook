@@ -13,6 +13,20 @@ export class UsuarioService {
     return JSON.parse(localStorage.getItem("usuario"))
   }
 
+  getUserMockado() {
+    return {
+      "id_user": "lucas",
+      "name": "Lucas Ferreira Lima",
+      "photo": "assets/skywalker.jpg",
+      "background": "assets/cover.jpg",
+      "bio": "Fé",
+      "location": "Pombal, Paraíba, Brasil",
+      "relationship": "Solteiro",
+      "since": "Maio de 2012",
+      "site": "curriculo-gratis.web.app"
+    }
+  }
+
   setUser(obj) {
     const httpOptions = {
       headers: new HttpHeaders({

@@ -18,7 +18,11 @@ export class FeedComponent implements OnInit {
   constructor(private postService:PostService) { }
 
   getFeed(): void {
-    this.postService.getListagem().subscribe(res => this.feed = res);
+    this.feed = this.postService.getListagemMock()
+    this.postService.getListagem().subscribe(
+      res => this.feed = res,
+      error => console.log(error)
+    );
   }
 
   ngOnInit() {

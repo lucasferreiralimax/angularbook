@@ -17,7 +17,11 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')
-    this.user = this.usuarioService.getUser()
+    if(this.usuarioService.getUser()) {
+      this.user = this.usuarioService.getUser()
+    } else {
+      this.user = this.usuarioService.getUserMockado()
+    }
   }
 
 }

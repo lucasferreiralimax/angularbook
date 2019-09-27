@@ -15,7 +15,11 @@ export class HomeComponent implements OnInit {
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    this.user = this.usuarioService.getUser()
+    if(this.usuarioService.getUser()) {
+      this.user = this.usuarioService.getUser()
+    } else {
+      this.user = this.usuarioService.getUserMockado()
+    }
   }
 
 }
