@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from '@services/login.service';
 
 @Component({
@@ -10,29 +11,30 @@ import { LoginService } from '@services/login.service';
 export class LoginComponent implements OnInit {
 
   loginForm;
-
   constructor(
     private loginService: LoginService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['lucasferreiralimax@gmail.com', Validators.required],
+      password: ['VocêÉespertinhoNé?', Validators.required]
     });
   }
 
   onSubmit(formData) {
-    console.warn('Your login submitted', formData);
     this.loginService.loginUser(formData).subscribe(
       res => {
         localStorage.setItem("usuario", JSON.stringify(res))
+        this.loginForm.reset()
       },
       err => {
         console.log("Error occured");
       }
     )
-    this.loginForm.reset();
-  }
+    this.loginService.validationSet(true)
+    this.router.navigate(['/'])
+  }  
 
   ngOnInit() {
   }
