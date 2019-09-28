@@ -1,39 +1,27 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
+import { AuthLoadGuard } from '@auth/auth-load.guard'
+import { AuthRouteGuard } from '@auth/auth-route.guard'
+
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./view/home/home.module').then(m => m.HomeModule),
-    pathMatch: 'full'
-  },
-  {
-    path: 'perfil/:id',
-    loadChildren: () => import('./view/profile/profile.module').then(m => m.ProfileModule)
-  },
-  {
-    path: 'amigos',
-    loadChildren: () => import('./view/amigos/amigos.module').then(m => m.AmigosModule)
-  },
-  {
-    path: 'mensagens',
-    loadChildren: () => import('./view/mensagens/mensagens.module').then(m => m.MensagensModule)
-  },
-  {
     path: 'cadastro',
-    loadChildren: () => import('./view/cadastro/cadastro.module').then(m => m.CadastroModule)
+    loadChildren: () => import('./views/cadastro/cadastro.module').then(m => m.CadastroModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./view/login/login.module').then(m => m.LoginModule)
+    loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./views/views.module').then(m => m.ViewsModule),
+    canLoad: [AuthLoadGuard],
+    canActivate: [AuthRouteGuard]
   },
   {
     path: '**',
     redirectTo: '404'
-  },
-  {
-    path: '404',
-    loadChildren: () => import('./view/notfound/notfound.module').then(m => m.NotfoundModule)
   }
 ];
 
