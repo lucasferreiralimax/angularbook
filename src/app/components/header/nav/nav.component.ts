@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { LoginService } from '@services/login.service';
 import { UsuarioService } from '@services/usuario.service'
 
 @Component({
@@ -9,7 +10,11 @@ import { UsuarioService } from '@services/usuario.service'
 })
 export class NavComponent implements OnInit {
 
-  constructor(private usuarioService:UsuarioService) { }
+  constructor(
+    private usuarioService:UsuarioService,
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
   user;
 
@@ -19,6 +24,11 @@ export class NavComponent implements OnInit {
     } else {
       this.user = this.usuarioService.getUserMockado()
     }
+  }
+
+  loginLoggout() {
+    this.loginService.validationSet(false)
+    this.router.navigate(['login'])
   }
 
 }

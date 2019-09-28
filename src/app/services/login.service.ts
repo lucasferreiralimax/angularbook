@@ -16,4 +16,13 @@ export class LoginService {
     }
     return this.http.post("http://localhost:3000/api/login", obj, httpOptions)
   }
+
+  validationSet(value) {
+    localStorage.setItem('login', value)
+  }
+
+  validation() {
+    let guard = JSON.parse(localStorage.getItem('login'))
+    return guard;
+  }
 }
