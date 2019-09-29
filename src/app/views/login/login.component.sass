@@ -1,3 +1,5 @@
+@import "_mixins"
+
 .header
   background-color: #3b5998
   background-image: linear-gradient(#4e69a2, #3b5998 50%)
@@ -6,23 +8,60 @@
   z-index: 1
   display: flex
   justify-content: space-between
+  +mobile
+    background: #3b5998
+    align-items: center
+    height: 44px
+    margin-bottom: 300px
   .logo
     color: #fff
     margin-top: 17px
+    +mobile
+      width: 100%
+      text-align: center
 
 .login
   padding: 10px
   color: #fff
   display: flex
+  box-sizing: border-box
   form
     display: flex
+    flex-wrap: wrap
+    width: 100%
+    +mobile
+      max-width: 416px
+      margin: 0 auto
+  button
+    font-weight: bold
   label, button
     display: flex
+    +mobile
+      width: 100%
   label
     flex-wrap: wrap
     margin-right: 14px
     span, input
       width: 100%
+    +mobile
+      margin: 0
+      &:first-of-type input
+        border-bottom: 0
+      span
+        display: none
+      input
+        border: 1px solid #ccc
+        padding: 12px
+  +mobile
+    position: absolute
+    top: 50px
+    width: 100%
+    button
+      display: block
+      margin-top: 14px
+      text-align: center
+.main
+  background: linear-gradient(white, #D3D8E8)
 
 .cadastro
   padding: 10px
@@ -30,3 +69,10 @@
     display: block
   input
     margin-bottom: 10px
+
+.footer
+  background: #fff
+  padding: 20px
+  font-size: 14px
+  color: #737373
+  text-align: center
