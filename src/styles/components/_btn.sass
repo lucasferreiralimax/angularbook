@@ -10,10 +10,15 @@
   user-select: none
   border-radius: 2px
   box-sizing: border-box
+  +mobile
+    border-radius: 5px
   &.default
     background: $primary
     border: solid 1px scale-color($primary, $lightness: -30%)
     color: #fff
+    +mobile
+      background: $primary-mobile
+      border: 0
   &.disable
     opacity: .5
     pointer-events: none
