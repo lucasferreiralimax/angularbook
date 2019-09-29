@@ -3,28 +3,42 @@
 .header
   background-color: #3b5998
   background-image: linear-gradient(#4e69a2, #3b5998 50%)
-  min-height: 42px
-  position: relative
-  z-index: 1
-  display: flex
-  justify-content: space-between
   +mobile
-    background: #3b5998
-    align-items: center
-    height: 44px
-    margin-bottom: 300px
+    background: #fff
+    padding-bottom: 200px
+  .container
+    background-color: #3b5998
+    background-image: linear-gradient(#4e69a2, #3b5998 50%)
+    margin: 0 auto
+    max-width: 980px
+    min-height: 42px
+    position: relative
+    z-index: 1
+    display: flex
+    justify-content: space-between
+    +mobile
+      background: #3b5998
+      align-items: center
+      height: 44px
   .logo
     color: #fff
     margin-top: 17px
     +mobile
       width: 100%
+      margin: 0
       text-align: center
+      position: relative
+      top: 3px
 
 .login
   padding: 10px
   color: #fff
   display: flex
   box-sizing: border-box
+  +mobile
+    position: absolute
+    top: 70px
+    width: 100%
   form
     display: flex
     flex-wrap: wrap
@@ -32,12 +46,16 @@
     +mobile
       max-width: 416px
       margin: 0 auto
-  button
-    font-weight: bold
   label, button
     display: flex
     +mobile
       width: 100%
+  button
+    font-weight: bold
+    +mobile
+      display: block
+      margin-top: 14px
+      text-align: center
   label
     flex-wrap: wrap
     margin-right: 14px
@@ -52,16 +70,19 @@
       input
         border: 1px solid #ccc
         padding: 12px
-  +mobile
-    position: absolute
-    top: 50px
-    width: 100%
-    button
-      display: block
-      margin-top: 14px
-      text-align: center
+
 .main
   background: linear-gradient(white, #D3D8E8)
+  .container
+    display: flex
+    margin: 0 auto
+    max-width: 980px
+    .world, .cadastro
+      width: 50%
+  +mobile
+    background: #fff
+    .world, .cadastro
+      display: none
 
 .cadastro
   padding: 10px

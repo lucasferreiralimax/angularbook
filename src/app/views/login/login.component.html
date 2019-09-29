@@ -1,43 +1,47 @@
 <header class="header">
-  <h1 class="logo">AngularBook</h1>
-  <section class="login">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
-      <label for="email">
-        <span>Email:</span>
-        <input id="email" type="email" formControlName="email" required>
-      </label>
-      <label for="senha">
-        <span>Senha:</span>
-        <input id="senha" type="password" formControlName="password">
-      </label>
-      <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">Entrar</button>
-    </form>
-  </section>
+  <div class="container">
+    <h1 class="logo">AngularBook</h1>
+    <section class="login">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
+        <label for="email">
+          <span>Email:</span>
+          <input id="email" type="email" formControlName="email" required>
+        </label>
+        <label for="senha">
+          <span>Senha:</span>
+          <input id="senha" type="password" formControlName="password">
+        </label>
+        <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">Entrar</button>
+      </form>
+    </section>    
+  </div>
 </header>
 <main class="main">
-  <section class="world">
-    <h2>O AngularBook ajuda você a estudar angular com a interface que faz parte da sua vida.</h2>
-    <img src="../../assets/world.png" alt="World imagem">
-  </section>
-  <section class="cadastro">
-    <h2>Abra uma conta</h2>
-    <h3>É rápido e fácil.</h3>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmitCadastro(registerForm.value)">
-      <label for="name">Nome:</label>
-      <input id="name" type="text" formControlName="name" required>
-      <label for="email_cadastro">Email:</label>
-      <input id="email_cadastro" type="email" formControlName="email_cadastro" required>
-      <label for="senha_cadastro">Senha:</label>
-      <input id="senha_cadastro" type="password" formControlName="password_cadastro" required>
-      <label for="bio">Bio:</label>
-      <input id="bio" type="text" formControlName="bio">
-      <label for="location">Location:</label>
-      <input id="location" type="text" formControlName="location">
-      <label for="relationship">Relationship:</label>
-      <input id="relationship" type="text" formControlName="relationship">
-      <button type="submit" name="button" [disabled]="!registerForm.valid">Enviar</button>
-    </form>
-  </section>
+  <div class="container">
+    <section class="world">
+      <h2>O AngularBook ajuda você a estudar angular com a interface que faz parte da sua vida.</h2>
+      <img src="../../assets/world.png" alt="World imagem">
+    </section>
+    <section class="cadastro">
+      <h2>Abra uma conta</h2>
+      <h3>É rápido e fácil.</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmitCadastro(registerForm.value)">
+        <label for="name">Nome:</label>
+        <input id="name" type="text" formControlName="name" required>
+        <label for="email_cadastro">Email:</label>
+        <input id="email_cadastro" type="email" formControlName="email_cadastro" required>
+        <label for="senha_cadastro">Senha:</label>
+        <input id="senha_cadastro" type="password" formControlName="password_cadastro" required>
+        <label for="bio">Bio:</label>
+        <input id="bio" type="text" formControlName="bio">
+        <label for="location">Location:</label>
+        <input id="location" type="text" formControlName="location">
+        <label for="relationship">Relationship:</label>
+        <input id="relationship" type="text" formControlName="relationship">
+        <button type="submit" name="button" [disabled]="!registerForm.valid">Enviar</button>
+      </form>
+    </section>
+  </div>
 </main>
 <footer class="footer">
   <small>AngularBook © 2019</small>
