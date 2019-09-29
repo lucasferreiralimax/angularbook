@@ -72,6 +72,7 @@ export class PostComponent implements OnInit {
       } else {
         this.postService.setPostMock(commentText)
         this.postContent.nativeElement.textContent = "";
+        this.getFeed()
         this.activePostagem(false);
       }
     }

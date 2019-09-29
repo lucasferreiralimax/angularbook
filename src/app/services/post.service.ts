@@ -14,21 +14,21 @@ export class PostService {
       "id_user": "lucas",
       "name": "Lucas Ferreira Lima",
       "photo": "assets/skywalker.jpg",
-      "data": new Date(),
+      "data": new Date(1994,11,15,3,33,0),
       "comment": "I am your father.",
     },
     {
       "id_user": "yoda",
       "name": "Yoda",
       "photo": "assets/yoda.jpg",
-      "data": new Date(),
+      "data": new Date(1994,11,15,3,33,0),
       "comment": "Faça ou não faça. A tentativa não existe.",
     },
     {
       "id_user": "luke",
       "name": "Luke",
       "photo": "assets/luke.jpg",
-      "data": new Date(),
+      "data": new Date(1994,11,15,3,33,0),
       "comment": `Eu nunca treinarei outra geração de Jedi
 Então se prepara gurizada que a força esteja com você.
 
@@ -39,14 +39,14 @@ Abraços Fé
       "id_user": "han",
       "name": "HanSolo",
       "photo": "assets/hansolo.jpg",
-      "data": new Date(),
+      "data": new Date(1994,11,15,3,33,0),
       "comment": "Nessas ruas perigosas, um jovem luta pela sobrevivência, mas anseia por voar entre as estrelas.",
     },
     {
       "id_user": "chew",
       "name": "Chewbacca",
       "photo": "assets/chewbacca.jpg",
-      "data": new Date(),
+      "data": new Date(1994,11,15,3,33,0),
       "comment": "RWGWGWARAHHHHWWRGGWRWRW.",
     }
   ]
@@ -79,7 +79,6 @@ Abraços Fé
       "comment": text
     })
     localStorage.setItem("feed", JSON.stringify(this.feed))
-    this.getListagemMock()
   }
 
   // Mock Interface
