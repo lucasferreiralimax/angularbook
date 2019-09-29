@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginRoutingModule } from './login-routing.module';
-import { LoginComponent } from './login.component';
+import { SharedModule } from '@modules/shared/shared.module';
 
+import { LoginComponent } from './login.component';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -12,7 +13,8 @@ import { LoginComponent } from './login.component';
     CommonModule,
     LoginRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class LoginModule { }

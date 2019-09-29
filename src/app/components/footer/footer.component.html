@@ -1,5 +1,5 @@
-<footer class="footer">
-  <ul>
+<footer class="footer" [ngClass]="{'login': type }">
+  <ul *ngIf="!type">
     <li>Privacidade</li>
     <li><span role="presentation" aria-hidden="true"> · </span></li>
     <li>Termos</li>

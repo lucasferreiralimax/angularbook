@@ -8,14 +8,15 @@ import { FeedComponent } from '@components/feed/feed.component';
 import { PostComponent } from '@components/feed/post/post.component';
 import { CommentComponent } from '@components/feed/comment/comment.component';
 import { PostCommentDirective } from '@directives/postcomment.directive';
-import { FooterComponent } from '@components/footer/footer.component';
 
 import { HomeRoutingModule } from './home-routing.module'
+import { SharedModule } from '@modules/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ],
   declarations: [
     HomeComponent,
@@ -24,8 +25,7 @@ import { HomeRoutingModule } from './home-routing.module'
     FeedComponent,
     PostComponent,
     CommentComponent,
-    PostCommentDirective,
-    FooterComponent
+    PostCommentDirective
   ]
 })
 export class HomeModule { }

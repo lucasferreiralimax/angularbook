@@ -1,8 +1,10 @@
+@import "_variables"
 @import "_mixins"
 
 .header
   background-color: #3b5998
   background-image: linear-gradient(#4e69a2, #3b5998 50%)
+  box-sizing: border-box
   +mobile
     background: #fff
     padding-bottom: 200px
@@ -20,15 +22,17 @@
       background: #3b5998
       align-items: center
       height: 44px
+      box-sizing: border-box
   .logo
     color: #fff
     margin-top: 17px
+    transform: translateY(15px)
     +mobile
       width: 100%
       margin: 0
       text-align: center
-      position: relative
-      top: 3px
+      font-size: 1.5em
+      transform: translateY(3px)
 
 .login
   padding: 10px
@@ -38,41 +42,61 @@
   +mobile
     position: absolute
     top: 70px
-    width: 100%
+    width: calc(100% - 20px)
+    padding: 0
   form
     display: flex
     flex-wrap: wrap
     width: 100%
+    align-items: flex-end
     +mobile
       max-width: 416px
       margin: 0 auto
   label, button
-    display: flex
     +mobile
       width: 100%
   button
     font-weight: bold
+    display: inline-flex
+    +tablet
+      line-height: 18px
+      padding: 2px 6px
+      font-size: 12px
     +mobile
       display: block
       margin-top: 14px
       text-align: center
   label
+    display: flex
     flex-wrap: wrap
     margin-right: 14px
     span, input
       width: 100%
+      font-size: 12px
+    input
+      margin-top: 5px
+      height: 25px
+      border: 1px solid scale-color($primary, $lightness: -30%)
+      padding: 3px
+      box-sizing: border-box
     +mobile
       margin: 0
       &:first-of-type input
         border-bottom: 0
+        border-radius: 5px 5px 0 0
+      &:last-of-type input
+        border-radius: 0 0 5px 5px
       span
         display: none
       input
         border: 1px solid #ccc
         padding: 12px
+        margin: 0
+        height: auto
 
 .main
   background: linear-gradient(white, #D3D8E8)
+  height: calc(100vh - 175px)
   .container
     display: flex
     margin: 0 auto
@@ -81,6 +105,7 @@
       width: 50%
   +mobile
     background: #fff
+    height: calc(100vh - 314px)
     .world, .cadastro
       display: none
 
@@ -90,10 +115,3 @@
     display: block
   input
     margin-bottom: 10px
-
-.footer
-  background: #fff
-  padding: 20px
-  font-size: 14px
-  color: #737373
-  text-align: center
