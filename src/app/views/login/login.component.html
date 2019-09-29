@@ -1,17 +1,20 @@
-<header>
-  <h1>AngularBook</h1>
+<header class="header">
+  <h1 class="logo">AngularBook</h1>
   <section class="login">
-    <h2>Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
-      <label for="email">Email:</label>
-      <input id="email" type="email" formControlName="email" required>
-      <label for="senha">Senha:</label>
-      <input id="senha" type="password" formControlName="password">
-      <button type="submit" name="button" [disabled]="!loginForm.valid">Enviar</button>
+      <label for="email">
+        <span>Email:</span>
+        <input id="email" type="email" formControlName="email" required>
+      </label>
+      <label for="senha">
+        <span>Senha:</span>
+        <input id="senha" type="password" formControlName="password">
+      </label>
+      <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">Entrar</button>
     </form>
   </section>
 </header>
-<main>
+<main class="main">
   <section class="world">
     <h2>O AngularBook ajuda você a estudar angular com a interface que faz parte da sua vida.</h2>
     <img src="../../assets/world.png" alt="World imagem">

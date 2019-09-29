@@ -12,6 +12,7 @@ import { UsuarioService } from '@services/usuario.service';
 export class LoginComponent implements OnInit {
 
   loginForm;
+  registerForm;
   constructor(
     private loginService: LoginService,
     private usuarioService: UsuarioService,
