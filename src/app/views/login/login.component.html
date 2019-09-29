@@ -1,10 +1,41 @@
-<section class="login">
-  <h1>Login</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
-    <label for="email">Email:</label>
-    <input id="email" type="email" formControlName="email" required>
-    <label for="senha">Senha:</label>
-    <input id="senha" type="password" formControlName="password">
-    <button type="submit" name="button" [disabled]="!loginForm.valid">Enviar</button>
-  </form>
-</section>
+<header>
+  <h1>AngularBook</h1>
+  <section class="login">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" required>
+      <label for="senha">Senha:</label>
+      <input id="senha" type="password" formControlName="password">
+      <button type="submit" name="button" [disabled]="!loginForm.valid">Enviar</button>
+    </form>
+  </section>
+</header>
+<main>
+  <section class="world">
+    <h2>O AngularBook ajuda você a estudar angular com a interface que faz parte da sua vida.</h2>
+    <img src="../../assets/world.png" alt="World imagem">
+  </section>
+  <section class="cadastro">
+    <h2>Abra uma conta</h2>
+    <h3>É rápido e fácil.</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmitCadastro(registerForm.value)">
+      <label for="name">Nome:</label>
+      <input id="name" type="text" formControlName="name" required>
+      <label for="email_cadastro">Email:</label>
+      <input id="email_cadastro" type="email" formControlName="email_cadastro" required>
+      <label for="senha_cadastro">Senha:</label>
+      <input id="senha_cadastro" type="password" formControlName="password_cadastro" required>
+      <label for="bio">Bio:</label>
+      <input id="bio" type="text" formControlName="bio">
+      <label for="location">Location:</label>
+      <input id="location" type="text" formControlName="location">
+      <label for="relationship">Relationship:</label>
+      <input id="relationship" type="text" formControlName="relationship">
+      <button type="submit" name="button" [disabled]="!registerForm.valid">Enviar</button>
+    </form>
+  </section>
+</main>
+<footer class="footer">
+  <small>Angular © 2019</small>
+</footer>

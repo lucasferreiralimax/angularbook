@@ -6,10 +6,6 @@ import { AuthRouteGuard } from '@auth/auth-route.guard'
 
 const routes: Routes = [
   {
-    path: 'cadastro',
-    loadChildren: () => import('./views/cadastro/cadastro.module').then(m => m.CadastroModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)
   },
