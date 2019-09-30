@@ -10,13 +10,15 @@
   user-select: none
   border-radius: 2px
   box-sizing: border-box
-  text-shadow: 0 1px 2px rgba(0,0,0,.5)
   +mobile
     border-radius: 5px
+  &.default,
+  &.success
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)
+    color: #fff
   &.default
     background: $primary
     border: solid 1px scale-color($primary, $lightness: -30%)
-    color: #fff
     +mobile
       background: $primary-mobile
       border: 0
@@ -24,7 +26,6 @@
     background: $six
     border: solid 1px scale-color($six, $lightness: -30%)
     box-shadow: inset 0 1px 1px scale-color($six, $lightness: 40%)
-    color: #fff
   &.disable
     opacity: .5
     pointer-events: none
