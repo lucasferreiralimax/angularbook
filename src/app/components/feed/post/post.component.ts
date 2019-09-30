@@ -67,13 +67,12 @@ export class PostComponent implements OnInit {
           },
           err => {
             console.log("Error occured");
+            this.postService.setPostMock(commentText)
+            this.postContent.nativeElement.textContent = "";
+            this.getFeed()
+            this.activePostagem(false);
           }
         )
-      } else {
-        this.postService.setPostMock(commentText)
-        this.postContent.nativeElement.textContent = "";
-        this.getFeed()
-        this.activePostagem(false);
       }
     }
   }

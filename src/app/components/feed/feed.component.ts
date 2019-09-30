@@ -18,10 +18,12 @@ export class FeedComponent implements OnInit {
   constructor(private postService:PostService) { }
 
   getFeed(): void {
-    this.feed = this.postService.getListagemMock()
     this.postService.getListagem().subscribe(
       res => this.feed = res,
-      error => console.log(error)
+      error => {
+        console.log(error)
+        this.feed = this.postService.getListagemMock()
+      }
     );
   }
 

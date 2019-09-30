@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
       },
       err => {
         console.log("Error occured");
+        this.loginService.validationSet(true)
+        this.router.navigate(['/'])
       }
     )
   }
