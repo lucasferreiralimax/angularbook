@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +11,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
+  private apiURL = environment.apiURL;
   feed = [
     {
       "id_user": "lucas",
@@ -58,7 +61,7 @@ Abraços Fé
       })
     };
 
-    return this.http.post<[]>("http://localhost:3000/api/list/users/posts", httpOptions)
+    return this.http.post<[]>(`${this.apiURL}/list/users/posts`, httpOptions)
   }
 
   setPost(obj) {
@@ -67,7 +70,7 @@ Abraços Fé
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post("http://localhost:3000/api/insert/user/post", obj, httpOptions)
+    return this.http.post(`${this.apiURL}/insert/user/post`, obj, httpOptions)
   }
 
   setPostMock(text: string) {

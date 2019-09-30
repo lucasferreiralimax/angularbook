@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +10,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  private api = "https://angularbookapi.herokuapp.com"
+  private apiURL = environment.apiURL;
   private guard;
 
   validationSet(log) {
@@ -30,7 +32,7 @@ export class LoginService {
         'Content-Type':  'application/json'
       })
     }
-    return this.http.post(`${this.api}/login`, obj, httpOptions)
+    return this.http.post(`${this.apiURL}/login`, obj, httpOptions)
   }
 
   registerUser(obj) {
@@ -39,6 +41,6 @@ export class LoginService {
         'Content-Type':  'application/json'
       })
     }
-    return this.http.post(`${this.api}/cadastro`, obj, httpOptions)
+    return this.http.post(`${this.apiURL}/cadastro`, obj, httpOptions)
   }
 }
