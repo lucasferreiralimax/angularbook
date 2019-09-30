@@ -27,7 +27,7 @@ export class NavComponent implements OnInit {
   }
 
   loginLoggout() {
-    this.loginService.validationSet(false)
+    this.loginService.logout()
     this.router.navigate(['login'])
   }
 

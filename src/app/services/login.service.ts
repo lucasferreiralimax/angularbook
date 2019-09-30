@@ -15,6 +15,11 @@ export class LoginService {
     this.guard = log;
   }
 
+  logout() {
+    localStorage.removeItem("usuario")
+    this.guard = !this.guard;
+  }
+
   validation() {
     return this.guard;
   }
