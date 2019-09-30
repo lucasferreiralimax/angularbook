@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '@services/login.service';
-import { UsuarioService } from '@services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -13,44 +12,60 @@ export class LoginComponent implements OnInit {
 
   loginForm;
   registerForm;
+
   constructor(
     private loginService: LoginService,
-    private usuarioService: UsuarioService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['lucasferreiralimax@gmail.com', Validators.required],
-      password: ['VocêÉespertinhoNé?', Validators.required]
+      password: ['lucas', Validators.required]
     });
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
-      email_cadastro: ['', Validators.required],
-      password_cadastro: ['', Validators.required],
-      photo: 'assets/skywalker.jpg',
-      background: 'assets/cover.jpg',
-      bio: '',
-      location: '',
-      relationship: ''
+      lastname: ['', Validators.required],
+      email_register: ['', Validators.required],
+      password_register: ['', Validators.required],
+      birthday: ['', Validators.required],
+      gender: ['', Validators.required]
     });
   }
 
   onSubmitLogin(formData) {
     this.loginService.loginUser(formData).subscribe(
-      res => {
-        localStorage.setItem("usuario", JSON.stringify(res))
-        this.loginForm.reset()
+      (res: any) => {
+        localStorage.setItem("usuario", JSON.stringify(res.user))
+        this.loginService.validationSet(res.logado)
+        if(res.logado) {
+          this.loginForm.reset()
+          this.router.navigate(['/'])
+        }
       },
       err => {
         console.log("Error occured");
       }
     )
-    this.loginService.validationSet(true)
-    this.router.navigate(['/'])
   }
 
   onSubmitCadastro(formData) {
-    this.usuarioService.setUser(formData).subscribe(
+    switch(formData.gender) {
+      case 'woman':
+        formData.photo = "assets/user_woman.jpg";
+        break;
+      case 'man':
+        formData.photo = "assets/user_man.jpg";
+        break;
+      case 'others':
+        formData.photo = "assets/user_other.jpg";
+        break;
+    }
+    formData.since = new Date();
+    formData.background = "assets/cover.jpg";
+
+    console.log(formData);
+
+    this.loginService.registerUser(formData).subscribe(
       res => {
         console.log(res)
       },

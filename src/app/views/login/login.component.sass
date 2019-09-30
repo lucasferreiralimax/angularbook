@@ -96,7 +96,7 @@
 
 .main
   background: linear-gradient(white, #D3D8E8)
-  height: calc(100vh - 175px)
+  height: calc(100vh - 155px)
   .container
     display: flex
     margin: 0 auto
@@ -109,9 +109,70 @@
     .world, .cadastro
       display: none
 
+.world
+  h2
+    color: #0e385f
+    font-size: 20px
+    font-weight: bold
+    line-height: 29px
+    margin-top: 40px
+    word-spacing: -1px
+
 .cadastro
   padding: 10px
+  h2
+    font-size: 36px
+    color: #333
+  h3
+    color: #1d2129
+    font-size: 19px
+    font-weight: normal
+  p
+    color: #90949c
+    font-weight: bold
   label, button
     display: block
   input
+    font-size: 18px
+    padding: 8px 10px
+    border-radius: 5px
+    border: 1px solid #ccd0d5
+    margin: 0
+    box-sizing: border-box
+  input:not([type="radio"])
     margin-bottom: 10px
+    width: 100%
+  .name input:first-of-type
+    margin-right: 5px
+  .name input:last-of-type
+    margin-left: 5px
+  .name,
+  .gender
+    display: inline-flex
+    label
+      padding: 5px
+      span
+        color: #1d2129
+        font-size: 18px
+        font-weight: normal
+        line-height: 18px
+        padding: 0 10px 0 3px
+  .terms
+    color: #777
+    font-size: 11px
+    font-weight: normal
+    max-width: 316px
+  .btn.success
+    background: linear-gradient($six, scale-color($six, $lightness: -20%))
+    border-radius: 5px
+    font-family: 'Freight Sans', Helvetica, Arial, sans-serif !important
+    font-weight: bold
+    font-size: 19px
+    letter-spacing: 1px
+    text-rendering: optimizelegibility
+    min-width: 194px
+    padding: 7px 20px
+    text-align: center
+    margin: 10px 0
+    &:hover
+      background: linear-gradient( scale-color($six, $lightness: 10%), scale-color($six, $lightness: -10%))

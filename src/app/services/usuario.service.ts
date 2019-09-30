@@ -27,12 +27,4 @@ export class UsuarioService {
     }
   }
 
-  setUser(obj) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    }
-    return this.http.post("http://localhost:3000/api/cadastro", obj, httpOptions)
-  }
 }

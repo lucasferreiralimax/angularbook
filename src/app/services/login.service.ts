@@ -8,21 +8,32 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
+  private api = "https://angularbookapi.herokuapp.com"
+  private guard;
+
+  validationSet(log) {
+    this.guard = log;
+  }
+
+  validation() {
+    return this.guard;
+  }
+
   loginUser(obj) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     }
-    return this.http.post("http://localhost:3000/api/login", obj, httpOptions)
+    return this.http.post(`${this.api}/login`, obj, httpOptions)
   }
 
-  validationSet(value) {
-    localStorage.setItem('login', value)
-  }
-
-  validation() {
-    let guard = JSON.parse(localStorage.getItem('login'))
-    return guard;
+  registerUser(obj) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    }
+    return this.http.post(`${this.api}/cadastro`, obj, httpOptions)
   }
 }
