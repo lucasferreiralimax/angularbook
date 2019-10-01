@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("usuario", JSON.stringify(res.user))
         this.loginService.validationSet(res.logado)
         if(res.logado) {
-          this.loginForm.reset()
           this.router.navigate(['/'])
         }
       },

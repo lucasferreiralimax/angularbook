@@ -7,7 +7,7 @@
   box-sizing: border-box
   +mobile
     background: #fff
-    padding-bottom: 200px
+    padding-bottom: 140px
   .container
     background-color: #3b5998
     background-image: linear-gradient(#4e69a2, #3b5998 50%)
@@ -105,8 +105,8 @@
       width: 50%
   +mobile
     background: #fff
-    height: calc(100vh - 314px)
-    .world, .cadastro
+    height: calc(100vh - 254px)
+    .world
       display: none
 
 .world
@@ -120,13 +120,39 @@
 
 .cadastro
   padding: 10px
+  .label-ou
+    display: none
+    width: 100%
+    text-align: center
+    transform: translateY(15px)
+    &:before,
+    &:after
+      content: ""
+      width: calc(50% - 20px)
+      height: 1px
+      background: #ccd0d5
+      display: block
+      position: absolute
+      top: 10px
+    &:after
+      right: 0
   h2
     font-size: 36px
     color: #333
+    +mobile
+      font-size: 22px
   h3
     color: #1d2129
     font-size: 19px
     font-weight: normal
+    +mobile
+      font-size: 15px
+  +mobile
+    width: 100% !important
+    h2, h3
+      text-align: center
+    .label-ou
+      display: block
   p
     color: #90949c
     font-weight: bold
@@ -151,19 +177,37 @@
   .name,
   .gender
     display: inline-flex
+    width: 100%
     label
       padding: 5px
+      +mobile
+        width: 100%
+        &:nth-of-type(2)
+          text-align: center
+        &:last-of-type
+          text-align: right
       span
         color: #1d2129
         font-size: 18px
         font-weight: normal
         line-height: 18px
         padding: 0 10px 0 3px
+  .gender
+    +break(500px)
+      flex-direction: row
+      flex-wrap: wrap
+      label
+        text-align: left !important
+
   .terms
     color: #777
     font-size: 11px
     font-weight: normal
     max-width: 316px
+    +mobile
+      max-width: 100%
+      text-align: center
+      margin: 30px 10px
   .btn.success
     background: linear-gradient($six, scale-color($six, $lightness: -20%))
     border-radius: 5px
@@ -178,3 +222,6 @@
     margin: 10px 0
     &:hover
       background: linear-gradient( scale-color($six, $lightness: 10%), scale-color($six, $lightness: -10%))
+    +mobile
+      width: 80%
+      margin: 0 auto
