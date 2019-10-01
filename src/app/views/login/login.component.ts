@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
 
   loginForm;
   registerForm;
+  loadingLogin = false;
+  loadingCadastro = false;
 
   constructor(
     private loginService: LoginService,
@@ -33,10 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin(formData) {
+    this.loadingLogin = true
     this.loginService.loginUser(formData).subscribe(
       (res: any) => {
         localStorage.setItem("usuario", JSON.stringify(res.user))
         this.loginService.validationSet(res.logado)
+        this.loadingLogin = false
         if(res.logado) {
           this.router.navigate(['/'])
         }
@@ -44,12 +48,14 @@ export class LoginComponent implements OnInit {
       err => {
         console.log("Error occured");
         this.loginService.validationSet(true)
+        this.loadingLogin = false
         this.router.navigate(['/'])
       }
     )
   }
 
   onSubmitCadastro(formData) {
+    this.loadingCadastro = true
     switch(formData.gender) {
       case 'woman':
         formData.photo = "assets/user_woman.jpg";
@@ -64,17 +70,17 @@ export class LoginComponent implements OnInit {
     formData.since = new Date();
     formData.background = "assets/cover.jpg";
 
-    console.log(formData);
-
     this.loginService.registerUser(formData).subscribe(
       res => {
         console.log(res)
+        this.loadingCadastro = false
+        this.registerForm.reset();
       },
       err => {
+        this.loadingCadastro = false
         console.log("Error occured", err)
       }
-    );
-    this.registerForm.reset();
+    );    
   }
 
   ngOnInit() {

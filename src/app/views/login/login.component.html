@@ -11,7 +11,10 @@
           <span>Senha:</span>
           <input id="password" type="password" formControlName="password">
         </label>
-        <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">Entrar</button>
+        <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">
+          <span *ngIf="!loadingLogin">Entrar</span>
+          <app-loading *ngIf="loadingLogin"></app-loading>
+        </button>
       </form>
     </section>
   </div>
@@ -53,7 +56,10 @@
           </label>
         </div>
         <p class="terms">Ao clicar em Cadastre-se, você concorda com nossos Termos, Política de Dados e Política de Cookies. Você pode receber notificações por SMS e pode cancelar isso quando quiser.</p>
-        <button class="btn success" type="submit" name="button" [disabled]="!registerForm.valid">Cadastre-se</button>
+        <button class="btn success" type="submit" name="button" [disabled]="!registerForm.valid">
+          <span *ngIf="!loadingCadastro">Cadastre-se</span>
+          <app-loading *ngIf="loadingCadastro"></app-loading>
+        </button>
       </form>
     </section>
   </div>
