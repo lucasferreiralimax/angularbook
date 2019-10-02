@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '@services/login.service';
+import { NotificationService } from '@services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
+    private notificationService: NotificationService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {
@@ -41,7 +43,10 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("usuario", JSON.stringify(res.user))
         this.loginService.validationSet(res.logado)
         this.loadingLogin = false
+        console.log(res)
+        this.notificationService.notification("error", "Login Erro", "Email ou senha errado")
         if(res.logado) {
+          this.notificationService.notification("success", "Login Sucesso", "Seja bem-vindo!")
           this.router.navigate(['/'])
         }
       },
@@ -74,13 +79,15 @@ export class LoginComponent implements OnInit {
       res => {
         console.log(res)
         this.loadingCadastro = false
+        this.notificationService.notification("error", "Cadastro", res.answer)
         this.registerForm.reset();
       },
       err => {
         this.loadingCadastro = false
+        this.notificationService.notification("error", "Cadastro Erro", res.answer)
         console.log("Error occured", err)
       }
-    );    
+    );
   }
 
   ngOnInit() {

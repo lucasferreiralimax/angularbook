@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotificationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
