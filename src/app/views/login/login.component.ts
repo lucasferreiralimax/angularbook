@@ -44,9 +44,8 @@ export class LoginComponent implements OnInit {
         this.loginService.validationSet(res.logado)
         this.loadingLogin = false
         console.log(res)
-        this.notificationService.notification("error", "Login Erro", "Email ou senha errado")
+        this.notificationService.notification("error", "Erro", "Email ou senha errado")
         if(res.logado) {
-          this.notificationService.notification("success", "Login Sucesso", "Seja bem-vindo!")
           this.router.navigate(['/'])
         }
       },
@@ -76,15 +75,15 @@ export class LoginComponent implements OnInit {
     formData.background = "assets/cover.jpg";
 
     this.loginService.registerUser(formData).subscribe(
-      res => {
+      (res: any) => {
         console.log(res)
         this.loadingCadastro = false
-        this.notificationService.notification("error", "Cadastro", res.answer)
+        this.notificationService.notification("success", "Sucesso", res.answer)
         this.registerForm.reset();
       },
       err => {
         this.loadingCadastro = false
-        this.notificationService.notification("error", "Cadastro Erro", res.answer)
+        this.notificationService.notification("error", "Erro", err)
         console.log("Error occured", err)
       }
     );

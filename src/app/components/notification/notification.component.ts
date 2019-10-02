@@ -17,4 +17,7 @@ export class NotificationComponent implements OnInit {
     this.notifications = this.notificationService.notificationAll()
   }
 
+  close(id) {
+    this.notifications.splice(id, 1)
+  }
 }

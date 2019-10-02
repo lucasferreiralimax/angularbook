@@ -1,5 +1,5 @@
 <section class="notifications">
-  <article class="notification" *ngFor="let item of notifications">
+  <article *ngFor="let item of notifications; index as id" class="notification" [ngClass]="item.type" (click)="close(id)">
     <h2>{{ item.title }}</h2>
     <p>{{ item.content }}</p>
   </article>
