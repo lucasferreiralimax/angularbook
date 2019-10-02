@@ -15,6 +15,9 @@ export class NotificationService {
       title: title,
       content: content
     })
+    setTimeout(() => {
+      this.notifications.pop()
+    }, 3000);
   }
 
   notificationAll() {
