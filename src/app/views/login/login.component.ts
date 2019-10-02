@@ -43,10 +43,11 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("usuario", JSON.stringify(res.user))
         this.loginService.validationSet(res.logado)
         this.loadingLogin = false
-        console.log(res)
-        this.notificationService.notification("error", "Erro", "Email ou senha errado")
         if(res.logado) {
           this.router.navigate(['/'])
+          this.notificationService.notification("success", "Sucesso", "Seja Bem-vindo!")
+        } else {
+          this.notificationService.notification("error", "Erro", "Email ou senha errado")
         }
       },
       err => {
