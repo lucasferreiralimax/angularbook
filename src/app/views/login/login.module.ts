@@ -6,9 +6,11 @@ import { LoginRoutingModule } from './login-routing.module';
 import { SharedModule } from '@modules/shared/shared.module';
 
 import { LoginComponent } from './login.component';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, HeaderComponent, MainComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,

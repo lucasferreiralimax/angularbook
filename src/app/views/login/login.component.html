@@ -1,67 +1,20 @@
-<header class="header">
-  <div class="container">
-    <h1 class="logo">AngularBook</h1>
-    <section class="login">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
-        <label for="email">
-          <span>Email:</span>
-          <input id="email" type="email" formControlName="email" required>
-        </label>
-        <label for="password">
-          <span>Senha:</span>
-          <input id="password" type="password" formControlName="password">
-        </label>
-        <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">
-          <span *ngIf="!loadingLogin">Entrar</span>
-          <app-loading *ngIf="loadingLogin"></app-loading>
-        </button>
-      </form>
-    </section>
-  </div>
-</header>
-<main class="main">
-  <div class="container">
-    <section class="world">
-      <h2>O AngularBook ajuda você a estudar angular com a interface que faz parte da sua vida.</h2>
-      <img src="../../assets/world.png" alt="World imagem" width="100%">
-    </section>
-    <section class="cadastro">
-      <span class="label-ou">ou</span>
-      <h2>Abra uma conta</h2>
-      <h3>É rápido e fácil.</h3>
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmitCadastro(registerForm.value)">
-        <div class="name">
-          <input id="name" placeholder="Nome" type="text" formControlName="name" required>
-          <input id="lastname" placeholder="Sobrenome" type="text" formControlName="lastname" required>
-        </div>
-        <input id="email_register" placeholder="E-mail" type="email" formControlName="email_register" required>
-        <input id="password_register" placeholder="Nova senha" type="password" formControlName="password_register" required>
-        <label for="birthday">
-          <p>Data de nascimento:</p>
-        </label>
-        <input id="birthday" type="date" formControlName="birthday" required>
-        <p>Gênero</p>
-        <div class="gender">
-          <label for="gender_woman">
-            <input id="gender_woman" name="gender" type="radio" formControlName="gender" value="woman" required>
-            <span>Feminino</span>
-          </label>
-          <label for="gender_man">
-            <input id="gender_man" name="gender" type="radio" formControlName="gender" value="man" required>
-            <span>Masculino</span>
-          </label>
-          <label for="gender_others">
-            <input id="gender_others" name="gender" type="radio" formControlName="gender" value="others" required>
-            <span>Personalizado</span>
-          </label>
-        </div>
-        <p class="terms">Ao clicar em Cadastre-se, você concorda com nossos Termos, Política de Dados e Política de Cookies. Você pode receber notificações por SMS e pode cancelar isso quando quiser.</p>
-        <button class="btn success" type="submit" name="button" [disabled]="!registerForm.valid">
-          <span *ngIf="!loadingCadastro">Cadastre-se</span>
-          <app-loading *ngIf="loadingCadastro"></app-loading>
-        </button>
-      </form>
-    </section>
-  </div>
-</main>
+<app-header>
+  <section class="login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
+      <label for="email">
+        <span>Email:</span>
+        <input id="email" type="email" formControlName="email" required>
+      </label>
+      <label for="password">
+        <span>Senha:</span>
+        <input id="password" type="password" formControlName="password">
+      </label>
+      <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">
+        <span *ngIf="!loadingLogin">Entrar</span>
+        <app-loading *ngIf="loadingLogin"></app-loading>
+      </button>
+    </form>
+  </section>
+</app-header>
+<app-main></app-main>
 <app-footer type="login"></app-footer>
