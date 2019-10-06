@@ -56,7 +56,7 @@
     display: none
 
 .post__input_options
-  width: 100%
+  width: calc(100% - 12px)
   padding-top: 10px
   clear: both
   display: flex
@@ -71,14 +71,21 @@
     position: absolute
     top: 5px
   button
-    width: 100%
+    width: 33.3%
     background: transparent
     border: 0
-    display: flex
-    align-items: center
+    display: inline-block
     padding: 10px
+    text-overflow: ellipsis
+    overflow: hidden
+    box-sizing: border-box
+    white-space: nowrap
+    text-align: left
+    +break(380px)
+      padding: 5px
     i
       margin-right: 10px
+      transform: translateY(5px)
 .post__overlay
   background: #000
   bottom: 100%
