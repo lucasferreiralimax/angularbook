@@ -1,0 +1,22 @@
+@import "_mixins"
+
+.reacts
+  width: calc(100% - 20px)
+  display: flex
+  margin: 0 auto
+  box-sizing: border-box
+  border-top: 1px solid #dadde1
+  button
+    width: 100%
+    background: transparent
+    border: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 10px
+    box-sizing: border-box
+    cursor: pointer
+    i
+      margin-right: 10px
+      +break(380px)
+        display: none
