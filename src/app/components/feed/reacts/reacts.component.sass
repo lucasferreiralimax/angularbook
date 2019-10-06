@@ -1,3 +1,4 @@
+@import "_variables"
 @import "_mixins"
 
 .reacts
@@ -16,8 +17,20 @@
     padding: 10px
     box-sizing: border-box
     cursor: pointer
+    color: #616770
+    font-weight: bold
+    outline: none
+    transition: .3s all
+    &:active
+      transform: scale(.9)
     i
       margin-right: 10px
     +break(380px)
       span
         display: none
+
+button.react__like
+  &.active
+    color: $primary-mobile
+    i
+      background-position: -41px -381px

@@ -14,8 +14,12 @@ export class CommentComponent implements OnInit {
 
   @HostListener('click', ['$event.target']) onClick(el) {
     if(el.className == "comment__photo") {
-      this.commentContent.nativeElement.focus()
+      this.onFocus()
     }
+  }
+
+  onFocus() {
+    this.commentContent.nativeElement.focus()
   }
 
   ngOnInit() {

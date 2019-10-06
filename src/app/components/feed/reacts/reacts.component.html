@@ -1,9 +1,9 @@
 <section class="reacts">
-  <button class="react__like" type="button" name="button">
+  <button class="react__like" [ngClass]="{ active: reaction }" type="button" name="button" (click)="react()">
     <i class="sprite_media icon__like"></i>
     <span>Curtir</span>
   </button>
-  <button class="react__comment" type="button" name="button">
+  <button class="react__comment" type="button" name="button" (click)="commentFocus()">
     <i class="sprite icon__comment"></i>
     <span>Comentar</span>
   </button>

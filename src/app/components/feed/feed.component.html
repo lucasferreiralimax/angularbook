@@ -9,7 +9,7 @@
       </div>
       <div class="feed__content" [innerHTML]="post.comment"></div>
     </div>
-    <app-reacts></app-reacts>
-    <app-comment [user]="user"></app-comment>
+    <app-reacts [comment]="comment"></app-reacts>
+    <app-comment #comment [user]="user"></app-comment>
   </article>
 </section>
