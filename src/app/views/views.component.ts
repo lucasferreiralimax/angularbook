@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-views',
-  templateUrl: './views.component.html',
-  styleUrls: ['./views.component.sass']
+  templateUrl: './views.component.html'
 })
 export class ViewsComponent implements OnInit {
 
