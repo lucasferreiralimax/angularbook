@@ -1,5 +1,6 @@
 @import "_variables"
 @import "_mixins"
+@import "_animations"
 
 .reacts
   width: calc(100% - 20px)
@@ -33,4 +34,5 @@ button.react__like
   &.active
     color: $primary-mobile
     i
+      animation: reactActive 1s
       background-position: -41px -381px
