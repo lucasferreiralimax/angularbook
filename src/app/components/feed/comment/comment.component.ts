@@ -18,8 +18,14 @@ export class CommentComponent implements OnInit {
     }
   }
 
+  isPlaceholder: String;
+
   onFocus() {
     this.commentContent.nativeElement.focus()
+  }
+
+  placeholderComment(value) {
+    this.isPlaceholder = value;
   }
 
   ngOnInit() {

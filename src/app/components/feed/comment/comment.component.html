@@ -1,7 +1,8 @@
 <div class="comment">
   <img class="comment__photo" [src]="user.photo" [alt]="user.name" width="32" height="32">
   <div class="comment__input">
-    <span #commentContent class="comment__input_content" contenteditable>Escreva um comentário...</span>
+    <span #commentContent class="comment__input_content" contenteditable appPostComment (updatePlaceholder)="placeholderComment($event)"></span>
+    <span class="comment__input_placeholder" [ngClass]="{ focus: isPlaceholder == 'focus', disable: isPlaceholder == 'disable' }">Escreva um comentário...</span>
     <div class="comment__input_options">
       <button type="button" name="button" data-tooltip="Insira um emoji">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106.059 106.059" width="16">

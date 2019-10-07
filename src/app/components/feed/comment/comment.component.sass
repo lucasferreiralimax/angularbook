@@ -11,14 +11,13 @@
   border: 1px solid #ccd0d5
   border-radius: 16px
   font-size: 13px
-  // padding: 8px 12px
   margin-left: 40px
   outline: none
   display: flex
   justify-content: flex-end
   flex-wrap: wrap
 .comment__input_content
-  color: #8d949e
+  color: #333
   white-space: pre-wrap
   overflow-wrap: break-word
   max-width: 100%
@@ -26,8 +25,16 @@
   padding: 7px 10px
   outline: none
   box-sizing: border-box
-  &.active
-    color: #333
+.comment__input_placeholder
+  color: #8d949e
+  position: absolute
+  top: 17px
+  left: 65px
+  pointer-events: none
+  &.focus
+    color: #ccc
+  &.disable
+    display: none
 .comment__input_options
   flex: 0 1 auto
   margin-right: 5px

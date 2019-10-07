@@ -11,19 +11,27 @@ export class PostCommentDirective {
   constructor() { }
 
   @HostListener('input', ['$event.target']) onInput(el) {
-    this.checkValue(el.textContent)
+    this.checkValue(el.textContent, "input")
   }
 
   @HostListener('focus', ['$event.target']) onFocus(el) {
     this.updatePostagem.next(true);
-    this.checkValue(el.textContent)
+    this.checkValue(el.textContent, "focus")
   }
 
-  checkValue(value) {
+  @HostListener('blur', ['$event.target']) onBlur(el) {
+    this.checkValue(el.textContent, "blur")
+  }
+
+  checkValue(value, type) {
     if(value) {
       this.updatePlaceholder.next("disable");
     } else {
-      this.updatePlaceholder.next("focus");
+      if(type == "blur") {
+        this.updatePlaceholder.next("blur");
+      } else {
+        this.updatePlaceholder.next("focus");
+      }
     }
   }
 
