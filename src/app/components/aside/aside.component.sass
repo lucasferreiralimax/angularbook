@@ -1,7 +1,60 @@
+@import "_variables"
+
 .aside
   .box
     background: #fff
-    border: 1px solid #dddfe2
     border-radius: 3px
-    padding: 8px
+    border: 1px solid #dddfe2
     margin-bottom: 12px
+    padding: 8px
+    h2,
+    h3
+      margin: 0
+      margin-bottom: 5px
+    h2
+      font-size: 13px
+      width: 100%
+      span
+        color: $primary
+        float: right
+        font-weight: normal
+    p
+      padding: 0
+      margin: 0
+      font-weight: normal
+      font-size: 13px
+      color: #616770
+    a
+      text-decoration: none
+  .adsense
+    figure
+      margin: 0
+      padding: 0
+      overflow: hidden
+      &:hover img
+        transform: scale(2)
+      img
+        transition: .5s all
+        transform-origin: center
+      h3
+        color: $primary
+        font-weight: bold
+        font-size: 13px
+      figcaption
+        margin: 0
+        padding: 5px 0
+        background: #fff
+        position: relative
+        z-index: 10
+  .btn
+    align-items: center
+    background: transparent
+    color: $primary
+    display: flex
+    font-size: 13px
+    font-weight: bold
+    justify-content: center
+    line-height: 0
+    padding: 5px
+    i
+      margin-right: 10px
