@@ -34,9 +34,23 @@ export class PostComponent implements OnInit {
   }
 
   activePostagem(value) {
+    const css = 'html, body { overflow-y: hidden; }';
+    const head = document.getElementsByTagName('head')[0];
+    let style = document.createElement('style');
+    style.type = 'text/css';
+    style.className = 'removeOver';
+
     this.isPostagem = value;
+
     if(this.postContent.nativeElement.textContent == "") {
       this.isPlaceholder = "";
+    }
+    if(this.isPostagem) {
+      style.appendChild(document.createTextNode(css));
+      head.appendChild(style);
+    } else {
+      style = document.querySelector('.removeOver')
+      head.removeChild(style);
     }
   }
 
