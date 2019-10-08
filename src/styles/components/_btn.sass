@@ -1,21 +1,21 @@
 .btn
-  font-size: 1em
-  border: 0
-  padding: 10px
-  display: block
-  cursor: pointer
-  transition: .3s all
-  outline: none
-  text-decoration: none
-  user-select: none
   border-radius: 2px
+  border: 0
   box-sizing: border-box
+  cursor: pointer
+  display: block
+  font-size: 1em
+  outline: none
+  padding: 10px
+  text-decoration: none
+  transition: .3s all
+  user-select: none
   +mobile
     border-radius: 5px
   &.default,
   &.success
-    text-shadow: 0 1px 2px rgba(0,0,0,.5)
     color: #fff
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)
   &.default
     background: $primary
     border: solid 1px scale-color($primary, $lightness: -30%)
@@ -28,8 +28,8 @@
     box-shadow: inset 0 1px 1px scale-color($six, $lightness: 40%)
     +mobile
       background: $six-mobile
-      box-shadow: none
       border: 0
+      box-shadow: none
   &.disable,
   &[disabled]
     opacity: .5

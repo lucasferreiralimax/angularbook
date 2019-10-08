@@ -2,35 +2,35 @@
 @import "_mixins"
 
 .login
-  padding: 10px
+  box-sizing: border-box
   color: #fff
   display: flex
-  box-sizing: border-box
+  padding: 10px
   +mobile
+    padding: 0
     position: absolute
     top: 70px
     width: calc(100% - 20px)
-    padding: 0
   form
+    align-items: flex-end
     display: flex
     flex-wrap: wrap
     width: 100%
-    align-items: flex-end
     +mobile
-      max-width: 416px
       margin: 0 auto
+      max-width: 416px
   label, button
     +mobile
       width: 100%
   button
-    font-weight: bold
     display: inline-flex
+    font-weight: bold
     justify-content: center
     +tablet
-      line-height: 18px
-      padding: 2px 6px
       font-size: 12px
+      line-height: 18px
       min-width: 50px
+      padding: 2px 6px
     +mobile
       display: block
       margin-top: 14px
@@ -40,14 +40,14 @@
     flex-wrap: wrap
     margin-right: 14px
     span, input
-      width: 100%
       font-size: 12px
+      width: 100%
     input
-      margin-top: 5px
-      height: 25px
       border: 1px solid scale-color($primary, $lightness: -30%)
-      padding: 3px
       box-sizing: border-box
+      height: 25px
+      margin-top: 5px
+      padding: 3px
     +mobile
       margin: 0
       &:first-of-type input
@@ -59,6 +59,6 @@
         display: none
       input
         border: 1px solid #ccc
-        padding: 12px
-        margin: 0
         height: auto
+        margin: 0
+        padding: 12px

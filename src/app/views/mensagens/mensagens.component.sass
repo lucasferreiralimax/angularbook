@@ -3,21 +3,21 @@
 .mensagens
   position: relative
   .btn
-    width: 100%
     margin-bottom: 10px
+    width: 100%
   .counter
-    position: absolute
-    bottom: 90px
-    right: 10px
-    border-radius: 10px
     background: #aaa
-    color: #fff
-    padding: 4px
-    font-size: .7em
-    display: block
-    margin: 0
-    text-shadow: 0 2px 1px rgba(#000, .5)
+    border-radius: 10px
+    bottom: 90px
     box-shadow: 0 2px 5px rgba(#000, .5)
+    color: #fff
+    display: block
+    font-size: .7em
+    margin: 0
+    padding: 4px
+    position: absolute
+    right: 10px
+    text-shadow: 0 2px 1px rgba(#000, .5)
     user-select: none
     &.erro
       background: #f00
@@ -29,10 +29,10 @@
   padding: 0
   li
     background: #fff
-    padding: 20px
     margin-bottom: 1px
-    transition: .3s all
+    padding: 20px
     position: relative
+    transition: .3s all
     &:first-of-type
       border-radius: 6px 6px 0 0
     &:last-of-type
@@ -44,8 +44,8 @@
       + li
         z-index: 1
       img
-        transform: scale(1.1)
         animation: force 3s infinite alternate
+        transform: scale(1.1)
       h1
         color: $primary
     img
@@ -78,8 +78,8 @@
     background: linear-gradient(90deg, rgba(#f00, .2) 10%, #fff)
     color: #f00
   &:focus
-    box-shadow: inset 4px 0 green
     background: linear-gradient(90deg, rgba(green, .2) 10%, #fff)
+    box-shadow: inset 4px 0 green
     &.erro
       background: linear-gradient(90deg, rgba(#f00, .2) 10%, #fff)
       box-shadow: inset 4px 0 #f00

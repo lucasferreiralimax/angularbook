@@ -7,9 +7,10 @@
   box-sizing: border-box
   margin-bottom: 10px
   transition: 0.3s all
+
 .post__container
-  padding: 0 0 12px 12px
   font-size: 14px
+  padding: 0 0 12px 12px
   position: relative
   &.active
     background: #fff
@@ -18,74 +19,79 @@
   .btn.default.full
     margin-top: 10px
     width: calc(100% - 10px)
+
 .post__photo
   border-radius: 100%
-  margin: 10px 10px 0 0
   float: left
+  margin: 10px 10px 0 0
+
 .post__input_content
+  box-sizing: border-box
   color: #333
-  white-space: pre-wrap
-  overflow-wrap: break-word
-  width: calc(100% - 50px)
-  padding: 22px 10px
+  display: inline-block
   float: left
   outline: none
-  box-sizing: border-box
-  display: inline-block
+  overflow-wrap: break-word
+  padding: 22px 10px
+  white-space: pre-wrap
+  width: calc(100% - 50px)
+
 .post__close
+  cursor: pointer
+  fill: #aaa
   position: absolute
   right: 10px
   top: 10px
-  fill: #aaa
-  cursor: pointer
   transition: .3s all
   &:hover
     fill: #444
     transform: scale(1.1)
+
 .post__input_placeholder
   color: #ccc
-  position: absolute
-  top: 20px
   left: 65px
   pointer-events: none
+  position: absolute
+  top: 20px
   &.focus
     font-size: 23px
-    top: 18px
     left: 75px
+    top: 18px
   &.disable
     display: none
 
 .post__input_options
-  width: calc(100% - 12px)
-  padding-top: 10px
   clear: both
   display: flex
   justify-content: flex-start
+  padding-top: 10px
   position: relative
+  width: calc(100% - 12px)
   &:before
+    background: #e9ebee
     content: ""
     display: flex
-    width: 100%
     height: 1px
-    background: #e9ebee
     position: absolute
     top: 5px
+    width: 100%
   button
-    width: 33.3%
     background: transparent
     border: 0
-    display: inline-block
-    padding: 10px
-    text-overflow: ellipsis
-    overflow: hidden
     box-sizing: border-box
-    white-space: nowrap
+    display: inline-block
+    overflow: hidden
+    padding: 10px
     text-align: left
+    text-overflow: ellipsis
+    white-space: nowrap
+    width: 33.3%
     +break(380px)
       padding: 5px
     i
       margin-right: 10px
       transform: translateY(5px)
+
 .post__overlay
   background: #000
   bottom: 100%

@@ -5,34 +5,34 @@
   .status
     display: block
     &:before
-      content: ''
       background: #aaa
       border-radius: 100%
-      width: 10px
+      content: ''
+      display: inline-block
       height: 10px
       margin-right: 10px
-      display: inline-block
+      width: 10px
     &.online
       &:before
-        background: green
         animation: force-status 1s infinite alternate ease-in-out
+        background: green
 .amigos__list
   list-style: none
   margin: 0
   padding: 0
   .amigo
     background: #fff
-    padding: 20px
     margin-bottom: 1px
-    transition: .3s all
+    padding: 20px
     position: relative
+    transition: .3s all
     &:hover
       padding: 40px 20px
       img
         box-shadow: 0 0 0 1px #fff, 0 0 6px 2px $primary
       .amigo__quote
-        opacity: 1
         margin-top: 10px
+        opacity: 1
         padding: 6px
         transform: scale(1)
     &:after
@@ -44,45 +44,45 @@
     &:last-of-type
       border-radius: 0 0 6px 6px
   .amigo__quote
-    font-size: .8em
-    opacity: 0
-    margin: 0
-    position: absolute
-    transition: .3s all
     background: $primary
+    border-radius: 4px
+    bottom: 20px
+    box-shadow: 0 0 0 1px #fff, 0 0 6px 2px $primary
+    box-sizing: border-box
+    clear: both
     color: #fff
     display: inline-block
-    border-radius: 4px
-    clear: both
     float: left
-    transform: scale(0)
-    transform-origin: left
+    font-size: .8em
     left: 20px
-    bottom: 20px
-    box-sizing: border-box
-    box-shadow: 0 0 0 1px #fff, 0 0 6px 2px $primary
+    margin: 0
+    opacity: 0
+    position: absolute
+    transform-origin: left
+    transform: scale(0)
+    transition: .3s all
     &:after
-      content: ''
-      width: 1px
-      height: 1px
-      border: 8px solid transparent
       border-bottom: 8px solid $primary
+      border: 8px solid transparent
+      content: ''
       display: block
+      height: 1px
+      left: 16px
       position: absolute
       top: -15px
-      left: 16px
+      width: 1px
       z-index: 2
     &:before
-      content: ''
-      width: 1px
-      height: 1px
-      border: 8px solid transparent
       border-bottom: 8px solid #fff
+      border: 8px solid transparent
+      content: ''
       display: block
+      filter: drop-shadow(0 0 6px $primary)
+      height: 1px
+      left: 16px
       position: absolute
       top: -17px
-      left: 16px
-      filter: drop-shadow(0 0 6px $primary)
+      width: 1px
       z-index: 1
     +tablet
       width: auto
@@ -92,14 +92,14 @@
     margin-right: 20px
     transition: .3s all
   h1
+    display: inline-block
+    float: left
+    font-size: 1em
+    line-height: 50px
     margin: 0
     transition: .3s all
-    display: inline-block
-    float: left
-    line-height: 50px
-    font-size: 1em
   span
     display: inline-block
-    margin: 5px 10px 0
     float: left
     line-height: 40px
+    margin: 5px 10px 0

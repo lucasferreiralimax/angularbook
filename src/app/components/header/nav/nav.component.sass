@@ -10,16 +10,16 @@
   margin-right: 8px
 
 .btn__bullet
+  align-items: center
   background: transparent
-  padding: 5px 8px
-  margin: 0 5px
-  font-size: 12px
-  font-weight: bold
   box-shadow: none
   color: #fff
   display: inline-flex
-  align-items: center
   flex-direction: row-reverse
+  font-size: 12px
+  font-weight: bold
+  margin: 0 5px
+  padding: 5px 8px
   &:hover
     background: rgba($secondary, .2)
     .icon
@@ -50,24 +50,24 @@
     + .btn
       margin-left: 5px
   .icon
-    margin-right: 10px
     fill: $secondary
     filter: drop-shadow(0 0 5px rgba(#fff, .5))
+    margin-right: 10px
   +mobile
     &.home
       display: none
     &:first-of-type
-      position: relative
       padding: 0 4px
+      position: relative
       &:after
         background: rgba(0, 0, 0, .1)
         content: ''
         display: block
         height: 18px
         position: absolute
+        right: -5px
         top: 6px
         width: 1px
-        right: -5px
       span
         font-size: 0
       .nav__photo

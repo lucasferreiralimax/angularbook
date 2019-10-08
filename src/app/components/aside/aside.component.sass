@@ -19,33 +19,14 @@
         float: right
         font-weight: normal
     p
-      padding: 0
-      margin: 0
-      font-weight: normal
-      font-size: 13px
       color: #616770
+      font-size: 13px
+      font-weight: normal
+      margin: 0
+      padding: 0
     a
       text-decoration: none
-  .adsense
-    figure
-      margin: 0
-      padding: 0
-      overflow: hidden
-      &:hover img
-        transform: scale(2)
-      img
-        transition: .5s all
-        transform-origin: center
-      h3
-        color: $primary
-        font-weight: bold
-        font-size: 13px
-      figcaption
-        margin: 0
-        padding: 5px 0
-        background: #fff
-        position: relative
-        z-index: 10
+
   .btn
     align-items: center
     background: transparent
@@ -58,3 +39,25 @@
     padding: 5px
     i
       margin-right: 10px
+
+.adsense
+  figure
+    margin: 0
+    overflow: hidden
+    padding: 0
+    &:hover img
+      transform: scale(2)
+    img
+      transform-origin: center
+      transition: .5s all
+      z-index: 1
+    h3
+      color: $primary
+      font-size: 13px
+      font-weight: bold
+    figcaption
+      background: #fff
+      margin: 0
+      padding: 5px 0
+      position: relative
+      z-index: 2

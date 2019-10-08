@@ -1,52 +1,57 @@
 .comment
   border-top: 1px
-  padding: 8px 12px
   border-top: 1px solid #dadde1
+  padding: 8px 12px
   position: relative
+
 .comment__photo
   border-radius: 100%
   float: left
+
 .comment__input
   background-color: #f2f3f5
-  border: 1px solid #ccd0d5
   border-radius: 16px
+  border: 1px solid #ccd0d5
+  display: flex
+  flex-wrap: wrap
   font-size: 13px
+  justify-content: flex-end
   margin-left: 40px
   outline: none
-  display: flex
-  justify-content: flex-end
-  flex-wrap: wrap
+
 .comment__input_content
-  color: #333
-  white-space: pre-wrap
-  overflow-wrap: break-word
-  max-width: 100%
-  flex: 1 0 auto
-  padding: 7px 10px
-  outline: none
   box-sizing: border-box
+  color: #333
+  flex: 1 0 auto
+  max-width: 100%
+  outline: none
+  overflow-wrap: break-word
+  padding: 7px 10px
+  white-space: pre-wrap
+
 .comment__input_placeholder
   color: #8d949e
-  position: absolute
-  top: 17px
   left: 65px
   pointer-events: none
+  position: absolute
+  top: 17px
   &.focus
     color: #ccc
   &.disable
     display: none
+
 .comment__input_options
+  align-items: flex-end
+  display: flex
   flex: 0 1 auto
   margin-right: 5px
-  display: flex
-  align-items: flex-end
   button
     background: transparent
     border: 0
-    padding: 6px 0 4px
-    margin: 0 5px
     cursor: pointer
+    margin: 0 5px
     outline: none
+    padding: 6px 0 4px
     svg
       fill: #777
       transition: .3s all
