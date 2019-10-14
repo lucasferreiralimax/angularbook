@@ -1,7 +1,5 @@
-import { Component, OnInit, HostListener, ViewEncapsulation, Input } from '@angular/core'
+import { Component, OnInit, HostListener, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core'
 import { FormControl } from '@angular/forms'
-
-import { PostService } from '@services/post.service'
 
 @Component({
   selector: 'app-feed',
@@ -13,21 +11,14 @@ import { PostService } from '@services/post.service'
 export class FeedComponent implements OnInit {
 
   @Input() user: any;
-  feed;
+  @Input() feed: any;
+  @Output() updateFeed = new EventEmitter<any>();
 
-  constructor(private postService:PostService) { }
+  constructor() { }
 
-  getFeed(): void {
-    this.postService.getListagem().subscribe(
-      res => this.feed = res,
-      error => {
-        console.log(error)
-        this.feed = this.postService.getListagemMock()
-      }
-    );
-  }
+  ngOnInit () { }
 
-  ngOnInit() {
-    this.getFeed()
+  getFeed() {
+    this.updateFeed.next();
   }
 }
