@@ -26,7 +26,7 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userBasic = JSON.parse(localStorage.getItem("usuario"));
+    this.userBasic = JSON.parse(localStorage.getItem("user"));
   }
 
   getFeed() {
@@ -75,6 +75,7 @@ export class PostComponent implements OnInit {
 
         this.postService.setPost(postData).subscribe(
           res => {
+            console.log("testes")
             this.getFeed();
             this.postContent.nativeElement.textContent = "";
             this.activePostagem(false);
