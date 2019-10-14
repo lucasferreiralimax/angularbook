@@ -38,18 +38,17 @@ export class LoginComponent implements OnInit {
 
     this.loginService.loginUser(formData).subscribe(
       (res: any) => {
-        localStorage.setItem("usuario", JSON.stringify(res.user))
-        this.loginService.validationSet(res.logado)
+        this.loginService.validationSet(res)
         this.loadingLogin = false
         this.notificationService.notification(res.notification.type, res.notification.title, res.notification.content)
-        if(res.logado) {
+        if(this.loginService.validation()) {
           this.router.navigate(['/'])
         }
       },
       (err: any) => {
         this.loadingLogin = false
-        this.notificationService.notification("error", "Erro", "Aconteceu algum erro na base de dados tente novamente mais tarde")
-        console.log(err)
+        this.notificationService.notification("error", err.error, err.message)
+        console.log("error", err)
       }
     )
   }
