@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { UsuarioService } from '@services/usuario.service'
+import { PostService } from '@services/post.service'
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,10 @@ import { UsuarioService } from '@services/usuario.service'
 export class HomeComponent implements OnInit {
 
   user;
+  feed;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService,
+              private postService: PostService) { }
 
   ngOnInit() {
     if(this.usuarioService.getUser()) {
@@ -20,6 +23,17 @@ export class HomeComponent implements OnInit {
     } else {
       this.user = this.usuarioService.getUserMockado()
     }
+    this.getFeed()
+  }
+
+  getFeed(): void {
+    this.postService.getListagem().subscribe(
+      res => this.feed = res,
+      error => {
+        console.log(error)
+        this.feed = this.postService.getListagemMock()
+      }
+    );
   }
 
 }
