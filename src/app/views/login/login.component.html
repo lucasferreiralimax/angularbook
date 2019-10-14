@@ -9,7 +9,7 @@
         <span>Senha:</span>
         <input id="password" type="password" formControlName="password">
       </label>
-      <button class="btn default" type="submit" name="button" [disabled]="!loginForm.valid">
+      <button class="btn primary" type="submit" name="button" [disabled]="!loginForm.valid">
         <span *ngIf="!loadingLogin">Entrar</span>
         <app-loading *ngIf="loadingLogin"></app-loading>
       </button>

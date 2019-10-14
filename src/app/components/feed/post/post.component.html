@@ -20,7 +20,7 @@
         <span>Sentimento/atividade</span>
       </button>
     </div>
-    <button *ngIf="isPostagem" (click)="onSubmitPost()" type="button" name="button" class="btn default full" [ngClass]="{ disable: isPlaceholder == 'focus'}">Publicar</button>
+    <button *ngIf="isPostagem" (click)="onSubmitPost()" type="button" name="button" class="btn primary full" [ngClass]="{ disable: isPlaceholder == 'focus'}">Publicar</button>
   </div>
   <div class="post__overlay" [ngClass]="{ active: isPostagem }" (click)="activePostagem(false)"></div>
 </section>
