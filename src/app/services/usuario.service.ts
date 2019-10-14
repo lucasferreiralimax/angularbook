@@ -9,9 +9,7 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  getUser() {
-    return JSON.parse(localStorage.getItem("usuario"))
-  }
+  getUser() { return JSON.parse(localStorage.getItem("user")) }
 
   getUserMockado() {
     return {
