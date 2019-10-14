@@ -1,3 +1,5 @@
+@import "_mixins"
+
 .perfil__cover
   align-items: flex-end
   background-position: center
@@ -6,6 +8,11 @@
   height: 315px
   justify-content: flex-start
   position: relative
+  +mobile
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    margin-bottom: 120px
   &:before
     background: linear-gradient(rgba(0,0,0,0) 71%, rgba(0,0,0, .53))
     border-top-color: rgba(0, 0, 0, .1)
@@ -28,6 +35,11 @@
     text-rendering: optimizelegibility
     text-shadow: 0 0 3px rgba(0, 0, 0, .8)
     z-index: 2
+    +mobile
+      position: relative
+      top: 130px
+      color: #333
+      text-shadow: none
 
 .perfil__photo
   border-radius: 100%
@@ -35,12 +47,17 @@
   margin: 0 20px
   transform: translateY(40px)
   z-index: 2
+  +mobile
+    position: relative
+    top: 110px
 
+.appAboutProfile
+  width: 37%
+.appFeedProfile
+  width: 63%
 .appAboutProfile,
 .appFeedProfile
   display: block
   float: left
-.appAboutProfile
-  width: 30%
-.appFeedProfile
-  width: 70%
+  +mobile
+    width: 100%

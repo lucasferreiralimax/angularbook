@@ -1,3 +1,6 @@
+@import "_variables"
+@import "_mixins"
+
 .about
   background: #fff
   border-radius: 3px
@@ -7,3 +10,15 @@
   transition: .3s all
   will-change: all
   padding: 1em
+  .title
+    font-size: 16px
+    font-weight: normal
+    display: flex
+    align-items: center
+    +mobile
+      display: none
+    svg
+      border: 3px solid $primary
+      border-radius: 100px
+      margin-right: 10px
+      fill: $primary
