@@ -55,21 +55,17 @@ Abraços Fé
   ]
 
   getListagem() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
-
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
     return this.http.post<[]>(`${this.apiURL}/list/users/posts`, httpOptions)
   }
 
+  getListagemProfile(iduser) {
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
+    return this.http.post<[]>(`${this.apiURL}/profile`, iduser, httpOptions)
+  }
+
   setPost(obj) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
     return this.http.post(`${this.apiURL}/insert/user/post`, obj, httpOptions)
   }
 
