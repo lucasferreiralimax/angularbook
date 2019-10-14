@@ -1,6 +1,8 @@
 <section class="perfil">
-  <article class="perfil__cover" [style.background-image]="'url(' + user.background + ')'">
+  <article *ngIf="user" class="perfil__cover" [style.background-image]="'url(' + user.background + ')'">
     <img class="perfil__photo" [src]="user.photo" [alt]="user.name" width="160" height="160">
-    <h1>{{ user.name }}</h1>
+    <h1>{{ user.name }} {{ user.lastname }}</h1>
   </article>
+  <app-about class="appAboutProfile"></app-about>
+  <app-feed class="appFeedProfile" [user]="user" [feed]="feed" (updateFeed)="getFeed()"></app-feed>
 </section>
