@@ -19,6 +19,9 @@
         <i class="sprite icon__smile"></i>
         <span>Sentimento/atividade</span>
       </button>
+      <button class="bullet" type="button" name="button">
+        <i class="sprite icon__bullet"></i>
+      </button>
     </div>
     <button *ngIf="isPostagem" (click)="onSubmitPost()" type="button" name="button" class="btn primary full" [ngClass]="{ disable: isPlaceholder == 'focus'}">Publicar</button>
   </div>
