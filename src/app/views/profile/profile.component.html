@@ -3,6 +3,8 @@
     <img class="perfil__photo" [src]="user.photo" [alt]="user.name" width="160" height="160">
     <h1>{{ user.name }} {{ user.lastname }}</h1>
   </article>
-  <app-about class="appAboutProfile"></app-about>
+  <app-about class="appAboutProfile">
+    <app-footer class="appFooterProfile"></app-footer>
+  </app-about>
   <app-feed class="appFeedProfile" [user]="user" [feed]="feed" (updateFeed)="getFeed()"></app-feed>
 </section>
