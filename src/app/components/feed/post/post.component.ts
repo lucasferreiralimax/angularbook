@@ -63,12 +63,12 @@ export class PostComponent implements OnInit {
 
     if(commentText) {
       if(this.userBasic) {
-        let { email, _id, name } = this.userBasic,
+        let { email, id, name, photo } = this.userBasic,
         postData = {
-          iduser: _id,
+          iduser: id,
           name: name,
           email: email,
-          photo: "assets/skywalker.jpg",
+          photo: photo,
           data: new Date(),
           comment: commentText
         };
