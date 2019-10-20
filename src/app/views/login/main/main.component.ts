@@ -54,11 +54,9 @@ export class MainComponent implements OnInit {
 
     this.loginService.registerUser(formData).subscribe(
       (res: any) => {
-        console.log(res)
         this.loadingCadastro = false
         this.notificationService.notification(res.notification.type, res.notification.title, res.notification.content)
         if(res.notification.content == "Usuário já cadastrado.") {
-          console.log("usuario teste")
           this.registerForm.controls['email_register'].reset()
           this.registerForm.controls['password_register'].reset()
         } else {

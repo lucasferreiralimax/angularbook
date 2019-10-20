@@ -10,6 +10,7 @@ import { CommentComponent } from '@components/feed/comment/comment.component';
 import { ReactsComponent } from '@components/feed/reacts/reacts.component';
 import { AboutComponent } from '@components/about/about.component';
 import { PostCommentDirective } from '@directives/postcomment.directive';
+import { TrimDirective } from '@directives/trim.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostCommentDirective } from '@directives/postcomment.directive';
     CommentComponent,
     ReactsComponent,
     AboutComponent,
-    PostCommentDirective
+    PostCommentDirective,
+    TrimDirective
   ],
   exports: [
     FooterComponent,
@@ -30,7 +32,8 @@ import { PostCommentDirective } from '@directives/postcomment.directive';
     CommentComponent,
     ReactsComponent,
     AboutComponent,
-    PostCommentDirective
+    PostCommentDirective,
+    TrimDirective
   ],
   imports: [
     CommonModule,

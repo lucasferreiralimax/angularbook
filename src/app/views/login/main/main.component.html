@@ -12,10 +12,10 @@
         <h3>É rápido e fácil.</h3>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmitCadastro(registerForm.value)">
           <div class="name">
-            <input id="name" placeholder="Nome" type="text" formControlName="name" required>
-            <input id="lastname" placeholder="Sobrenome" type="text" formControlName="lastname" required>
+            <input id="name" placeholder="Nome" type="text" formControlName="name" appTrim required>
+            <input id="lastname" placeholder="Sobrenome" type="text" formControlName="lastname" appTrim required>
           </div>
-          <input id="email_register" placeholder="E-mail" type="email" formControlName="email_register" required>
+          <input id="email_register" placeholder="E-mail" type="email" formControlName="email_register" appTrim required>
           <input id="password_register" placeholder="Nova senha" type="password" formControlName="password_register" required>
           <label for="birthday">
             <p>Data de nascimento:</p>

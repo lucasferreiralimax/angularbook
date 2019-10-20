@@ -3,7 +3,7 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm.value)">
       <label for="email">
         <span>Email:</span>
-        <input id="email" type="email" formControlName="email" required>
+        <input id="email" type="email" formControlName="email" appTrim required>
       </label>
       <label for="password">
         <span>Senha:</span>
