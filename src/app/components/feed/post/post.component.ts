@@ -63,19 +63,15 @@ export class PostComponent implements OnInit {
 
     if(commentText) {
       if(this.userBasic) {
-        let { email, id, name, photo } = this.userBasic,
+        let { id } = this.userBasic,
         postData = {
           iduser: id,
-          name: name,
-          email: email,
-          photo: photo,
           data: new Date(),
           comment: commentText
         };
 
         this.postService.setPost(postData).subscribe(
           res => {
-            console.log("testes")
             this.getFeed();
             this.postContent.nativeElement.textContent = "";
             this.activePostagem(false);
