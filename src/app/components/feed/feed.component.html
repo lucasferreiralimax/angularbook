@@ -2,10 +2,10 @@
   <app-post *ngIf="user" [user]="user" (updateFeed)="getFeed()"></app-post>
   <article class="feed__post" *ngFor="let post of feed">
     <div class="feed__container">
-      <img class="feed__photo" [routerLink]="['perfil', user.id_user]" [src]="post.photo" [alt]="post.name" width="40" height="40">
+      <img class="feed__photo" [routerLink]="['/perfil', user.username]" [src]="post.photo" [alt]="post.name" width="40" height="40">
       <div class="feed__header">
-        <h1 [routerLink]="['perfil', user.id_user]">{{ post.name }}</h1>
-        <p class="feed__date" [routerLink]="['perfil', user.name]">{{ post.data }}</p>
+        <h1 [routerLink]="['perfil', user.username]">{{ post.name }}</h1>
+        <p class="feed__date" [routerLink]="['/perfil', user.username]">{{ post.data }}</p>
       </div>
       <div class="feed__content" [innerHTML]="post.comment"></div>
     </div>
