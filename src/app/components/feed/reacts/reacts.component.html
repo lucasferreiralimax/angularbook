@@ -7,8 +7,16 @@
     <i class="sprite icon__comment"></i>
     <span>Comentar</span>
   </button>
-  <button class="react__shared" type="button" name="button">
+  <button class="react__shared" type="button" name="button" (click)="shared = !shared">
     <i class="sprite icon__shared"></i>
     <span>Compartilhar</span>
   </button>
+  <section class="shared__content" [ngClass]="{ active: shared }">
+    <button type="button" name="button">Compartilhar agora (Público)</button>
+    <button type="button" name="button">Escrever publicação</button>
+    <button type="button" name="button">Enviar no Messenger</button>
+    <button type="button" name="button">Compartilhar em um grupo</button>
+    <button type="button" name="button">Compartilhar em uma Página</button>
+    <button type="button" name="button">Compartilhar na linha do tempo de um amigo</button>
+  </section>
 </section>

@@ -8,6 +8,7 @@
   display: flex
   margin: 0 auto
   width: calc(100% - 20px)
+  position: relative
   button
     align-items: center
     background: transparent
@@ -36,3 +37,37 @@ button.react__like
     i
       animation: reactActive 1s
       background-position: -41px -381px
+
+.shared__content
+  background: #fff
+  border: 1px solid #aaa
+  border-radius: 7px
+  padding: 10px
+  width: 250px
+  box-sizing: border-box
+  position: absolute
+  top: 40px
+  right: 0
+  z-index: 2
+  opacity: 0
+  transition: .3s all
+  pointer-events: none
+  z-index: 2
+  &:before
+    content: ''
+    display: block
+    width: 25px
+    height: 25px
+    background: #fff
+    box-shadow: 1px -1px 0 1px rgba(#000, .2)
+    transform: rotate(-45deg)
+    top: -12px
+    left: calc(50% - 12.5px)
+    position: absolute
+    z-index: -1
+  &.active
+    opacity: 1
+    pointer-events: all
+  button
+    text-align: left
+    justify-content: flex-start
