@@ -139,5 +139,8 @@
       }
     }
   },
-  "defaultProject": "angularbook"
+  "defaultProject": "angularbook",
+  "cli": {
+    "analytics": "ca6315ca-2230-4cf2-be7b-2fcb267f8813"
+  }
 }
