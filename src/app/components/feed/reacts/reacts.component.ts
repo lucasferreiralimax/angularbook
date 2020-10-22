@@ -9,6 +9,7 @@ import { CommentComponent } from '@components/feed/comment/comment.component';
 export class ReactsComponent implements OnInit {
 
   reaction = false
+  shared = false
 
   constructor() { }
 
