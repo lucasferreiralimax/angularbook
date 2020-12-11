@@ -1,6 +1,12 @@
 {
   "name": "angularbook",
   "version": "0.0.1",
+  "author": "lucasferreiralimax (https://github.com/lucasferreiralimax)",
+  "repository": "https://github.com/lucasferreiralimax/angularbook",
+  "bugs": {
+    "url": "https://github.com/lucasferreiralimax/angularbook/issues"
+  },  
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +15,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^10.2.2",
     "@angular/common": "^10.2.2",
