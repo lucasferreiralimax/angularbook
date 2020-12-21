@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [Livepreview](https://angular-facebook.web.app)
 
 # Backend api 
-[https://github.com/andersonflima/angularbook-api](angularbook-api) feito pelo o [https://github.com/andersonflima/angularbook-api](Anderson Lima)
+[angularbook-api](https://github.com/andersonflima/angularbook-api) feito pelo o [Anderson Lima](https://github.com/andersonflima/angularbook-api)
 
 ## Development server
 
