@@ -4,6 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [Livepreview](https://angular-facebook.web.app)
 
+# Backend api 
+[https://github.com/andersonflima/angularbook-api](angularbook-api) feito pelo o [https://github.com/andersonflima/angularbook-api](Anderson Lima)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
