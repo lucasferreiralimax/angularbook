@@ -21,7 +21,7 @@ export class UsuarioService {
       "location": "Pombal, Paraíba, Brasil",
       "relationship": "Solteiro",
       "since": "Maio de 2012",
-      "site": "curriculo-gratis.web.app"
+      "site": "criar-curriculo.web.app"
     }
   }
 
