@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class MensagensComponent implements OnInit {
 
-  @ViewChild('mensagem', {static: true}) mensagemContent: ElementRef;
+  @ViewChild('message', {static: true}) messageContent: ElementRef;
 
   chats = [
     {
@@ -55,14 +55,14 @@ export class MensagensComponent implements OnInit {
     }
   }
 
-  pushMensagem(value: string) {
+  pushMessage(value: string) {
     if(value) {
       this.chats.push({
         "name": "Yoda",
         "photo": "assets/yoda.jpg",
         "content": value,
       })
-      this.mensagemContent.nativeElement.value = ''
+      this.messageContent.nativeElement.value = ''
     }
   }
 
