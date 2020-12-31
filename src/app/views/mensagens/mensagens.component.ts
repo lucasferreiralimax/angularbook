@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-mensagens',
@@ -7,31 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MensagensComponent implements OnInit {
 
+  @ViewChild('mensagem', {static: true}) mensagemContent: ElementRef;
+
   chats = [
     {
       "name": "Lucas",
       "photo": "assets/skywalker.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo.",
+      "content": "What is the force?",
     },
     {
       "name": "Yoda",
       "photo": "assets/yoda.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "content": "Do. Or do not. There is no try.",
     },
     {
       "name": "Lucas",
       "photo": "assets/skywalker.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo.",
+      "content": "I don't understand",
     },
     {
       "name": "Lucas",
       "photo": "assets/skywalker.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "content": "Do you help me?",
     },
     {
       "name": "Yoda",
       "photo": "assets/yoda.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "content": "Luminous beings are we…not this crude matter.",
     }
   ]
 
@@ -59,7 +61,8 @@ export class MensagensComponent implements OnInit {
         "name": "Yoda",
         "photo": "assets/yoda.jpg",
         "content": value,
-      })      
+      })
+      this.mensagemContent.nativeElement.value = ''
     }
   }
 
