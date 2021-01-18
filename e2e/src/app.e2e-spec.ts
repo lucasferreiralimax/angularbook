@@ -12,9 +12,9 @@ describe('AngularBook Login', () => {
     expect(page.getLogoText()).toEqual('AngularBook');
   });
 
-  it('Rodapé Angularbook © 2019', () => {
+  it('Rodapé Angularbook © 2021', () => {
     page.navigateTo();
-    expect(page.getFooterText()).toEqual('Angularbook © 2019');
+    expect(page.getFooterText()).toEqual('Angularbook © 2021');
   });
 
   it('Botão Entrar', () => {
