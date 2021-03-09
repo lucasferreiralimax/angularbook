@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Learn More
 
-> Se tiver problemas [abra uma nova issue aqui](https://github.com/lucasferreiralimax/angularboo/issues/new)
+> Se tiver problemas [abra uma nova issue aqui](https://github.com/lucasferreiralimax/angularbook/issues/new)
 
 ### :performing_arts: Com quem você pode conversar sobre o projeto?
 #### Who can you talk to about the project?
